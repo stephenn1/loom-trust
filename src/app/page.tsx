@@ -1,4 +1,5 @@
 import AboutUsSection from "@/components/web-site/home-page/about-us-section";
+import Footer from "@/components/web-site/home-page/footer";
 import HeroSection from "@/components/web-site/home-page/hero-section";
 import MarketOverview from "@/components/web-site/home-page/market-overview";
 import OurServicesSection from "@/components/web-site/home-page/our-services-section";
@@ -14,6 +15,7 @@ export default function Home() {
       <OurServicesSection />
       <Partners />
       <MarketOverview />
+      <Footer />
     </main>
   );
 }
