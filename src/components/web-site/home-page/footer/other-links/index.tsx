@@ -3,7 +3,7 @@ import React from "react";
 
 export default function OtherLinks() {
   return (
-    <div className="flex space-x-16 text-base md:text-lg text-gray-500 font-medium mx-auto md:w-1/2 mt-10 md:mt-0">
+    <div className="flex space-x-16 text-sm md:text-xl text-gray-500 font-medium md:w-1/2 mt-10 md:mt-0">
       <div className="flex flex-col space-y-5">
         <Link
           href={"/"}

@@ -12,7 +12,7 @@ import {
 export default function Subscribe() {
   return (
     <div className="grid gap-3 md:w-1/2">
-      <p className="text-sm md:text-lg w-full text-gray-700">
+      <p className="text-sm md:text-xl font-light md:font-medium w-full text-gray-700">
         Stay updated with our latest features and offers.
       </p>
       <form className="flex gap-5 w-full md:w-3/4">
@@ -28,7 +28,7 @@ export default function Subscribe() {
           Subscribe
         </Button>
       </form>
-      <div className="flex space-x-5 text-gray-500 mt-7">
+      <div className="flex space-x-5 text-gray-500 mt-7 ">
         <Link
           href={"https://www.facebook.com/login/"}
           target="_blank"
