@@ -24,20 +24,20 @@ export default function Footer() {
         <Subscribe />
         <OtherLinks />
       </div>
-      <p className="text-gray-700 text-sm md:text-base text-center py-10 border-b-2 border-primary">
+      <p className="text-gray-700 text-xs md:text-sm text-center py-5 md:py-7 border-b-2 border-primary">
         LoomTrust is a trademark registered by the company Bitcoinforme S.L.
-        (Tax ID B54835301), operating since 2015 in Spain (Europe) and
+        (Tax ID B54835301), operating since 2015 in Germany(Europe) and
         protecting our customers and the funds provided with special accounts
-        from our partners (More information), complying with current regulations
-        on Anti-Money Laundering and Counter-Terrorist Financing. <br />{" "}
+        from our partners, complying with current regulations on Anti-Money
+        Laundering and Counter-Terrorist Financing. <br />{" "}
         <span className="my-3">
-          LoomTrust is a company registered with the Bank of Spain with the
+          LoomTrust is a company registered with the Bank of Germany with the
           number D592 for custody services and buying and selling digital
           assets.
         </span>
       </p>
-      <p className="text-sm md:text-base text-gray-500 text-center">
-        © 2018 LoomTrust. All rights reserved
+      <p className="text-sm md:text-base text-gray-500 text-center py-2">
+        © 2015 LoomTrust. All rights reserved
       </p>
     </footer>
   );
