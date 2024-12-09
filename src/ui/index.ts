@@ -10,6 +10,9 @@ export { Icons } from "./icons/types";
 export { Input } from "./inputs";
 export { Inputs } from "./inputs/types";
 
+// Loader
+export { PageLoader } from "./loader/page-loader";
+
 // Logo
 export { Logo } from "./logo";
 

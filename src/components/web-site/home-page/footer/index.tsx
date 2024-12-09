@@ -1,4 +1,3 @@
-import { Button, ButtonVariants, Icon, Icons } from "@/ui";
 import Image from "next/image";
 import React from "react";
 import Subscribe from "./subscribe";

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "@/components/web-site/_shared/header";
+import Reduxprovider from "@/store/redux-provider";
 
 export const metadata: Metadata = {
   title: "Loom Trust",
@@ -15,9 +15,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+        />
+      </head>
       <body className={`antialiased grid`} suppressHydrationWarning>
-        <Header />
-        {children}
+        <Reduxprovider>{children}</Reduxprovider>
       </body>
     </html>
   );
