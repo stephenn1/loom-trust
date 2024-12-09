@@ -2,7 +2,6 @@
 
 import React, { ChangeEvent, useEffect, useState } from "react";
 import RequiredField from "../_shared/required-field";
-import { normalizeEnum } from "./utils";
 import { Icon } from "@/ui/icons";
 import { Icons } from "@/ui/icons/types";
 
@@ -136,7 +135,7 @@ export function SelectInput({
               }`}
               onClick={() => handleSelectOption(option)}
             >
-              {normalizeEnum(option)}
+              {option}
             </li>
           ))}
         </ul>
