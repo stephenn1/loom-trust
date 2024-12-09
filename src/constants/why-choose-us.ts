@@ -1,32 +1,38 @@
 export const WHY_CHOOSE_US = [
   {
-    title: "Ultimate Security",
+    img: { url: "/why-chose-us/phone.svg", alt: "Phone" },
+    title: "Instant Transaction",
     content:
-      "With advanced security systems, we keep your account always protected, ensuring that your transactions are always secure and protected. Your peace of mind is our priority.",
+      "Receive your Bitcoin or other cryptocurrencies within 15 minutes of payment approval.",
   },
   {
-    title: "Fast and Reliable Transactions",
+    img: { url: "/why-chose-us/seamless.svg", alt: "Seamless Transaction" },
+    title: "Seamless Experience",
     content:
-      "Say goodbye to slow transaction times. With our platform, enjoy lightning-fast transactions with minimal downtime, allowing you to trade and send cryptocurrencies quickly and efficiently.",
+      "An easy-to-use dashboard that takes you from sign-up to payment approval effortlessly. Perfect for crypto beginners! ",
   },
   {
-    title: "Global Accessibility",
+    img: { url: "/why-chose-us/cup-mind.svg", alt: " Peace Of Mind" },
+    title: "Peace of Mind ",
     content:
-      "Join a global community of cryptocurrency enthusiasts and traders. Our platform is accessible from anywhere in the world, allowing you to trade and send cryptocurrencies with ease, regardless of your location.",
+      "Loomtrust is fully licensed and regulated so you can venture into the world of cryptocurrencies safely.",
   },
   {
-    title: "Exceptional User Experience",
+    img: { url: "/why-chose-us/with-card.svg", alt: "Direct Withdrawal" },
+    title: "Direct Withdrawal",
     content:
-      "Experience seamless navigation and intuitive design with our user-friendly platform. Whether you're a seasoned trader or new to cryptocurrency, our platform is designed to make your experience smooth and hassle-free.",
+      "Enjoy withdrawals directly to your bank, giving you quick access to your funds whenever you need them.",
   },
   {
-    title: "Regulatory Compliance",
+    img: { url: "/why-chose-us/fraud-pro.svg", alt: "Fraud Pro" },
+    title: "Fraud Protection",
     content:
-      "Rest assured knowing that our platform operates in full compliance with regulatory requirements. We adhere to strict legal and regulatory standards to ensure that your transactions are conducted with complete legitimacy and transparency.",
+      "LoomTrust utilizes advanced tools that help us protect users and identify, prevent, and insure against losses from fraud.",
   },
   {
-    title: "Dedicated Customer Support",
+    img: { url: "/why-chose-us/support2.svg", alt: "Support" },
+    title: "24/7 Support",
     content:
-      "Need assistance? Our dedicated customer support team is available 24/7 to help you with any questions or concerns you may have. We're here to provide personalized support and guidance whenever you need it.",
+      "We all need a helping hand from time to time. At LoomTrust,  our exceptional customer care team is available to assist you around the clock.",
   },
 ];
