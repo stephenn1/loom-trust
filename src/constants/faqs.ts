@@ -1,7 +1,7 @@
 export const FAQS = [
   {
-    ques: "What is Prime Futures Pip and how does it work?",
-    ans: "Prime Futures Pip is a comprehensive cryptocurrency trading platform that allows users to buy, sell and perform transactions in digital assets securely and conveniently. Our platform provides users with access to a wide range of cryptocurrencies, including Bitcoin, Ethereum, and more.",
+    ques: "What is Prime LoomTrust and how does it work?",
+    ans: "LoomTrust is a comprehensive cryptocurrency platform that allows users to send, receive, trade and perform transactions in digital assets securely and conveniently. Our platform provides users with access to a wide range of cryptocurrencies, including Bitcoin, Ethereum, and more.",
   },
   {
     ques: "Is it safe to preform cryptocurrency transactions on this platform?",
@@ -13,11 +13,11 @@ export const FAQS = [
   },
   {
     ques: "How can I deposit funds into my account?",
-    ans: "Deposit into your account has been made seamless using various methods  credit/debit cards, ATM machines and cryptocurrency deposits. Simply navigate to the deposit section of your account dashboard to initiate a deposit.",
+    ans: "Deposit into your account has been made seamless using various external source like an ATM machine and cryptocurrency deposits. Simply navigate to the deposit section of your account dashboard to initiate a deposit.",
   },
   {
     ques: "How long does it take to process withdrawals?",
-    ans: "At Prime Futures Pip, we pride ourselves on making withdrawals quick and hassle-free. Withdrawals are typically processed within minutes, providing you with fast access to your funds whenever you need them.  With our user-friendly interface, initiating a withdrawal is as simple as a few clicks, allowing you to effortlessly transfer your cryptocurrency to your desired wallet or bank account.",
+    ans: "At loomTrust, we pride ourselves on making withdrawals quick and hassle-free. Withdrawals are typically processed within minutes, providing you with fast access to your funds whenever you need them. Initiating a withdrawal is as simple as a few clicks, allowing you to effortlessly transfer your cryptocurrency to your desired wallet or bank account.",
   },
   {
     ques: "What if I encounter technical issues or need assistance?",

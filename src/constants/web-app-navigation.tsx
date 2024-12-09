@@ -24,6 +24,11 @@ export const WEB_APP_NAVIGATION = [
     icon: <RiBankCardFill />,
   },
   {
+    title: "Mining",
+    url: "/mining",
+    icon: <RiBankCardFill />,
+  },
+  {
     title: "Support",
     url: "/support",
     icon: <BiSupport />,
