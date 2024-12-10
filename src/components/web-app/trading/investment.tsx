@@ -1,10 +1,18 @@
 "use client";
 
+import { Button, ButtonVariants, Modal } from "@/ui";
+import Link from "next/link";
 import React, { useState } from "react";
+import { IoCloseCircleOutline } from "react-icons/io5";
 
 export default function Investment() {
+  const [showModal, setShowModal] = useState(false);
   const [time, setTime] = useState(60000);
   const [investment, setInvestment] = useState(100);
+
+  const handleToggleShowModal = () => {
+    setShowModal(!showModal);
+  };
 
   return (
     <div className="mt-5 md:mt-0 md:p-5 md:bg-white shadow-[3px_3px_10px_-7px_rgba(0,0,0,0.3)] rounded-lg">
@@ -70,47 +78,42 @@ export default function Investment() {
 
       <div className="grid gap-5 mt-5 grid-cols-2 md:mt-10">
         <button
-          onClick={() => {}}
+          onClick={handleToggleShowModal}
           className="py-3 bg-[#0faf59] rounded-md text-white"
         >
           Buy
         </button>
 
         <button
-          onClick={() => {}}
+          onClick={handleToggleShowModal}
           className="py-3 bg-[#ff6251] rounded-md text-white"
         >
           Sell
         </button>
       </div>
 
-      {/* <div
-        className={`fixed top-0 left-0 w-full h-full p-5 grid items-center transition-all ${
-          showModal ? "opacity-100 visible" : "opacity-0 invisible"
-        }`}
-      >
-        <button className="absolute top-0 left-0 bg-black bg-opacity-30 backdrop-blur-[1px] w-full h-full z-10 "></button>
-        <div className="bg-white z-20 w-full mx-auto max-w-lg grid grid-rows-[auto_1fr_auto] gap-10 rounded-lg relative p-5">
-          <button
-            onClick={handleToggleModal}
-            className="ml-auto w-max block text-2xl text-gray-700"
-          >
-            <MdOutlineCancel />
+      <Modal isModal={showModal}>
+        <div className="grid gap-5">
+          <button onClick={handleToggleShowModal} className="ml-auto">
+            <IoCloseCircleOutline className="text-black text-3xl" />
           </button>
-          <div className="grid gap-5 text-center">
-            <p className="text-gray-700 font-semibold text-xl sm:text-2xl">
-              Trade Not Possible
-            </p>
-            <p className="text-gray-600 sm:text-lg px-5">
-              A deposit is required before you can place a trade. Please make a
-              deposit to proceed with your trading activities.
-            </p>
-          </div>
-          <Link href={"/finance?active-tab=deposit"} className="grid">
-            <Button >Make a Deposit</Button>
+          <p className="font-bold text-center text-xl">Trading not possible</p>
+          <p className="text-lg text-gray-500 text-center">
+            A deposit is required before you can place a trade. Please make a
+            deposit to proceed with your trading activities.{" "}
+          </p>
+
+          <Link href={"/deposit"} className="grid">
+            <Button
+              onClick={handleToggleShowModal}
+              variant={ButtonVariants.PrimaryFilled}
+              className="mt-5"
+            >
+              Make Deposit
+            </Button>
           </Link>
         </div>
-      </div> */}
+      </Modal>
     </div>
   );
 }

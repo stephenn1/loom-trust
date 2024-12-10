@@ -2,7 +2,7 @@
 
 import { db } from "@/config/firebase";
 import { RootState } from "@/store";
-import { Button, Input, Inputs } from "@/ui";
+import { Button, ButtonVariants, Input, Inputs } from "@/ui";
 import { doc, setDoc } from "firebase/firestore";
 import { useRouter } from "next/navigation";
 import React, { FormEvent, useState } from "react";
@@ -15,7 +15,6 @@ import {
 import { IoIosInformationCircleOutline } from "react-icons/io";
 
 export default function AccountDetails() {
-  const router = useRouter();
   const user = useSelector((state: RootState) => state.user);
   const [paymentMethod, setPaymentMethod] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -80,18 +79,17 @@ export default function AccountDetails() {
     });
 
     setIsLoading(false);
-    router.push("/finance?active_tab=withdrawal&step=processing-withdrawal");
   };
 
   return (
     <form onSubmit={handleFormSubmit} className="max-w-2xl mx-auto w-full">
-      <div className="bg-white grid gap-5 rounded-xl">
+      <div className="grid gap-5 p-5 rounded-lg bg-primary bg-opacity-10">
         <Input
           type={Inputs.Number}
-          name=""
-          id="transaction-code"
-          label="Transaction Code"
-          placeholder="Please input the transaction code"
+          name="amount"
+          id="amount"
+          label="Amount"
+          placeholder="Please input the withdrawal amount."
           required
         />
 
@@ -119,7 +117,7 @@ export default function AccountDetails() {
 
             <Input
               type={Inputs.Text}
-              name=""
+              name="wallet-addres"
               id="wallet-address"
               label="Wallet Address"
               placeholder="Please enter your wallet address"
@@ -156,28 +154,26 @@ export default function AccountDetails() {
               placeholder="Enter your account number"
               required
             />
+            <Input
+              type={Inputs.Number}
+              name="routing-number"
+              id="routing-number"
+              label="Routing Number"
+              placeholder="Enter your Routing number"
+              required
+            />
           </>
         )}
-
-        <Input
-          type={Inputs.Number}
-          name="amount"
-          id="amount"
-          label="Amount"
-          placeholder="Please input the withdrawal amount."
-          required
-        />
-
-        <p className="min-h-6 text-red-400 opacity-80 text-sm">
-          {errorMessage}
-        </p>
       </div>
+
+      <p className="min-h-6 text-red-500 text-sm mt-3">{errorMessage}</p>
 
       <div>
         <Button
           type="submit"
           isLoading={isLoading}
           disabled={isLoading}
+          variant={ButtonVariants.PrimaryFilled}
           className="mx-auto w-full mt-5 py-3 px-20"
         >
           Proceed

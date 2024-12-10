@@ -1,13 +1,11 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React from "react";
 import Chart from "./chart";
 import TradeHistory from "./trade-history";
 import Investment from "./investment";
 
 export default function Trading() {
-  useEffect(() => {}, []);
-
   return (
     <div className="h-full grid grid-rows-[1fr_auto] md:grid-cols-[1fr_auto] bg-secondary">
       <Chart />

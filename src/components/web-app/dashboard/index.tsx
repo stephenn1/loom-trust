@@ -13,7 +13,7 @@ export default function Dashboard() {
   const user = useSelector((state: RootState) => state.user);
 
   return (
-    <div className="grid gap-5 sm:gap-10 p-5 sm:p-10 h-full overflow-y-scroll custom-scroll-bar bg-secondary">
+    <div className="grid gap-5 sm:gap-10 p-5 sm:p-10 h-full overflow-y-scroll overflow-x-hidden custom-scroll-bar bg-secondary">
       {/* Information */}
       <div className="grid gap-3">
         <h3 className="font-bold text-lg sm:text-2xl text-gray-700">
@@ -27,7 +27,7 @@ export default function Dashboard() {
       </div>
 
       {/* Cards */}
-      <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
+      <div className="grid grid-cols-[repeat(3,_minmax(300px,_1fr))] gap-5 h-max overflow-x-auto custom-scroll-bar pb-3">
         <PortfolioBalance value={user.balance} />
         <TotalDeposit value={user.deposit} />
         <Withdrawals value={user.balance} />

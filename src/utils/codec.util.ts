@@ -4,6 +4,6 @@ export const encodeData = (data: Record<string, string | number | boolean>) => {
 };
 
 export const decodeData = (encoded: string) => {
-  const decoded = JSON.parse(atob(encoded));
+  const decoded = JSON?.parse(atob(encoded));
   return decoded;
 };

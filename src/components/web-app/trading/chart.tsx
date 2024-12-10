@@ -44,7 +44,7 @@ export default function Chart() {
           style: "1",
           locale: "en",
           enable_publishing: false,
-          allow_symbol_change: false,
+          allow_symbol_change: true,
           container_id: "tradingview_69550",
         });
       }

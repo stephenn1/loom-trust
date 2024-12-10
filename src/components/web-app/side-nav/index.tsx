@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { WEB_APP_NAVIGATION } from "@/constants/web-app-navigation";
@@ -72,11 +72,13 @@ export default function SideNav() {
             )}
           </div>
 
-          <div>
-            <p className="text-sm font-semibold text-white">
+          <div className="overflow-hidden">
+            <p className="text-sm font-semibold text-white overflow-hidden text-ellipsis text-nowrap">
               {user.firstName} {user.lastName}
             </p>
-            <p className="text-sm font-semibold text-gray-300">{user.email}</p>
+            <p className="text-sm font-semibold text-gray-300 overflow-hidden text-ellipsis">
+              {user.email}asdasd
+            </p>
           </div>
 
           <button className="text-white text-xl">

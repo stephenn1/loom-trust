@@ -48,7 +48,7 @@ input[type="number"] {
 
 .base-input input,
 .base-input textarea {
-  @apply w-full bg-white text-sm font-medium py-3 px-4 col-[-1/1] row-[-1/1] border rounded-md border-gray-300 placeholder:text-gray-400 outline-none transition-all;
+  @apply w-full bg-white py-3 px-4 col-[-1/1] row-[-1/1] border rounded-md border-gray-300 placeholder:text-gray-400 outline-none transition-all;
 }
 
 .otp-input {
