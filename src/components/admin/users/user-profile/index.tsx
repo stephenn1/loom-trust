@@ -17,7 +17,7 @@ import Image from "next/image";
 import { db } from "@/config/firebase";
 import { useParams, useRouter } from "next/navigation";
 import { User, userInitialState } from "@/store/slices/user.slice";
-import { doc, getDoc, onSnapshot, setDoc } from "firebase/firestore";
+import { doc, onSnapshot, setDoc } from "firebase/firestore";
 import { v4 as uuidV4 } from "uuid";
 
 export default function Profile() {
@@ -72,7 +72,7 @@ export default function Profile() {
           completed: true,
         },
       ],
-    }).catch((error) => {});
+    }).catch(() => {});
 
     setIsAddingProfit(false);
     getUserData();

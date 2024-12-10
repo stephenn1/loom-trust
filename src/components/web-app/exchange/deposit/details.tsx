@@ -3,7 +3,7 @@ import { RootState } from "@/store";
 import { Button, ButtonVariants, Modal } from "@/ui";
 import { doc, setDoc } from "firebase/firestore";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { FaRegCopy } from "react-icons/fa6";
 import QRCode from "react-qr-code";
 import { useSelector } from "react-redux";
@@ -12,7 +12,6 @@ import { v4 as uuidV4 } from "uuid";
 export default function Details() {
   const user = useSelector((state: RootState) => state.user);
 
-  const [copied, setCopied] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
   const [isMakingPayment, setIsMakingPayment] = useState(false);
@@ -23,12 +22,6 @@ export default function Details() {
 
   const handleCopy = () => {
     navigator.clipboard.writeText(user.depositAddress);
-
-    setCopied(true);
-
-    setTimeout(() => {
-      setCopied(false);
-    }, 2000);
   };
 
   const handlePaymentMade = async () => {

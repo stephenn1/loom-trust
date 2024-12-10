@@ -4,7 +4,6 @@ import { db } from "@/config/firebase";
 import { RootState } from "@/store";
 import { Button, ButtonVariants, Input, Inputs } from "@/ui";
 import { doc, setDoc } from "firebase/firestore";
-import { useRouter } from "next/navigation";
 import React, { FormEvent, useState } from "react";
 import { useSelector } from "react-redux";
 import { v4 as uuidV4 } from "uuid";

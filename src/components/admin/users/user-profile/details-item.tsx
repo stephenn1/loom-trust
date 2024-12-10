@@ -1,18 +1,12 @@
 "use client";
 
 import { db } from "@/config/firebase";
-import { RootState } from "@/store";
 import { setUser, User } from "@/store/slices/user.slice";
 import { doc, setDoc } from "firebase/firestore";
-import { Span } from "next/dist/trace";
-import Image from "next/image";
 import React, { FormEvent, useState } from "react";
-import { BsFillSaveFill } from "react-icons/bs";
-import { FaCheck } from "react-icons/fa";
-import { FaRegCircleCheck } from "react-icons/fa6";
 import { FiEdit3 } from "react-icons/fi";
-import { IoCheckmarkDoneCircleSharp, IoCloudDone } from "react-icons/io5";
-import { useDispatch, useSelector } from "react-redux";
+import { IoCloudDone } from "react-icons/io5";
+import { useDispatch } from "react-redux";
 
 interface DetailsItemProps {
   editable?: boolean;

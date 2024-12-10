@@ -17,10 +17,7 @@ export default function Security() {
             label="Confirm Password"
           />
 
-          <Button
-            variant="filled"
-            className="w-full max-w-xs mx-auto py-3 sm:mt-5"
-          >
+          <Button className="w-full max-w-xs mx-auto py-3 sm:mt-5">
             Change Password
           </Button>
         </div>

@@ -2,7 +2,7 @@ import React from "react";
 import { FiArrowDownLeft, FiArrowUpRight } from "react-icons/fi";
 
 interface TransactionItemProps {
-  type: "deposit" | "withdrawal";
+  type: "deposit" | "withdrawal" | "profit";
   amount: number;
   completed: boolean;
   date: string;

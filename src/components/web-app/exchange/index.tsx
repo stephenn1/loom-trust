@@ -40,7 +40,7 @@ export default function Exchange() {
               activeTab === "withdrawal" ? "text-primary" : "text-gray-500"
             }`}
           >
-            <PiHandDepositFill className="text-xl" />
+            <PiHandWithdrawFill className="text-xl" />
             Withdrawal
             <span
               className={`absolute w-full bg-primary h-[1px] -bottom-[1px] transition-all ${

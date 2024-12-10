@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { WEB_APP_NAVIGATION } from "@/constants/web-app-navigation";

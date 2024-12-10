@@ -3,14 +3,9 @@
 import { usePathname } from "next/navigation";
 import React from "react";
 import Image from "next/image";
-import { signOut } from "firebase/auth";
-import { auth } from "@/config/firebase";
-import { useSelector } from "react-redux";
-import { RootState } from "@/store";
 import UserDetails from "./user-details";
 
 export default function Header() {
-  const user = useSelector((state: RootState) => state.user);
   const path = usePathname();
 
   return (

@@ -1,4 +1,3 @@
-import { useSearchParams } from "next/navigation";
 import AccountDetails from "./account-details";
 
 export default function Withdrawal() {

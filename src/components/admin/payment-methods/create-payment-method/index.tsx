@@ -132,11 +132,7 @@ export default function CreatePaymentMethod({
             <p className="text-error-500">{""}</p>
 
             <div className="w-full ml-auto max-w-xs grid grid-cols-2 gap-5 pb-5">
-              <Button
-                type="button"
-                onClick={handleshowFormToggle}
-                variant="outlined"
-              >
+              <Button type="button" onClick={handleshowFormToggle}>
                 Cancel
               </Button>
 
@@ -144,7 +140,6 @@ export default function CreatePaymentMethod({
                 isLoading={isCreating}
                 disabled={isCreating}
                 type="submit"
-                variant="filled"
               >
                 Save
               </Button>

@@ -2,12 +2,8 @@
 
 import { auth } from "@/config/firebase";
 import { RootState } from "@/store";
-import { Button } from "@/ui";
 import { signOut } from "firebase/auth";
-import Image from "next/image";
-import Link from "next/link";
 import React, { useState } from "react";
-import { FaPhoneAlt } from "react-icons/fa";
 import { FaGlobe, FaUser } from "react-icons/fa6";
 import { IoChevronDown } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";

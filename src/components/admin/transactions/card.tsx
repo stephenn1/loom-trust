@@ -46,7 +46,7 @@ export default function Card({
           completed: true,
         },
       ],
-    }).catch((error) => {
+    }).catch(() => {
       // setErrorMessage(error.message);
     });
 
@@ -129,7 +129,6 @@ export default function Card({
             onClick={handleApprove}
             isLoading={isApproving}
             disabled={isApproving}
-            variant="filled"
             className="text-xs font-semibold text-white bg-primary py-2 px-3 rounded-md w-max grid items-center"
           >
             Approve

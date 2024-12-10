@@ -1,7 +1,7 @@
 import { db } from "@/config/firebase";
 import { Button, Input, Inputs } from "@/ui";
 import { deleteDoc, doc, setDoc } from "firebase/firestore";
-import React, { FormEvent, useEffect, useState } from "react";
+import React, { FormEvent, useState } from "react";
 import { IoMdClose } from "react-icons/io";
 
 interface EditPaymentMethodProps {
@@ -150,7 +150,6 @@ export default function EditPaymentMethod({
                 isLoading={isDeleting}
                 disabled={isDeleting}
                 onClick={handleDelete}
-                variant="outlined"
               >
                 Delete
               </Button>
@@ -159,7 +158,6 @@ export default function EditPaymentMethod({
                 isLoading={isUpdating}
                 disabled={isUpdating}
                 type="submit"
-                variant="filled"
               >
                 Save
               </Button>
