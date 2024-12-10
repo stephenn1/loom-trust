@@ -34,7 +34,7 @@ export default function SideNav() {
       </Link>
 
       <nav className="grid gap-5 content-start">
-        {WEB_APP_NAVIGATION.slice(0, 4).map((n, i) => (
+        {WEB_APP_NAVIGATION.slice(0, 5).map((n, i) => (
           <NavigationItem key={i} icon={n.icon} title={n.title} url={n.url} />
         ))}
       </nav>

@@ -78,7 +78,7 @@ export default function Details() {
             <QRCode
               size={500}
               style={{ height: "auto", maxWidth: "100%", width: "100%" }}
-              value={user.depositAddress || ""}
+              value={user.depositAddress}
               viewBox={`0 0 256 256`}
             />
           </div>
@@ -87,8 +87,7 @@ export default function Details() {
         <div className="grid grid-cols-[1fr_auto] gap-3 overflow-hidden items-center">
           <div className="overflow-hidden bg-white h-full rounded-md grid items-center px-5">
             <p className="w-full overflow-hidden text-ellipsis text-sm sm:text-base">
-              {user.depositAddress ||
-                "kispfoinawmnfiepoiaheuhoaiuerhnocauheoriuaheofiuhaocniefuhiacuewhoriuahworieuchnoaiucsho"}
+              {user.depositAddress}
             </p>
           </div>
           <button
@@ -112,12 +111,12 @@ export default function Details() {
 
       <Modal isModal={showModal}>
         <div className="grid gap-3">
-          <p className="font-bold text-center text-xl">Processing Payment</p>
+          <p className="font-bold text-center text-xl">Payment Processing</p>
           <p className="sm:text-lg text-gray-600 text-center">
-            We kindly request your patience as we proceed to verify your
-            deposit. Our team is diligently reviewing the transaction details to
-            ensure accuracy and security. Your co-operation and understanding
-            during the process are greatly appreciated.
+            Thank you for your patience as we verify your deposit. Our team is
+            carefully reviewing the transaction to ensure accuracy and security.
+            We appreciate your cooperation and understanding throughout this
+            process.
           </p>
 
           <Link href={"/dashboard"} className="grid">

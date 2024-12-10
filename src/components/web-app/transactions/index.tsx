@@ -2,15 +2,20 @@
 
 import React from "react";
 import TransactionItem from "./transaction-item";
-import { useSelector } from "react-redux";
-import { RootState } from "@/store";
 
 export default function Transactions() {
-  const user = useSelector((state: RootState) => state.user);
-
   return (
-    <div className="bg-white content-start gap-5 rounded-r-lg grid h-full py-5 px-5 overflow-auto custom-scroll-bar">
-      {user.transactions.map((t, i) => (
+    <div className="bg-white content-start gap-5 rounded-r-lg grid h-full p-10 overflow-auto custom-scroll-bar">
+      <TransactionItem amount={1000} type={"deposit"} />
+      <TransactionItem amount={1000} type={"deposit"} />
+      <TransactionItem amount={1000} type={"deposit"} />
+      <TransactionItem amount={1000} type={"deposit"} />
+      <TransactionItem amount={1000} type={"deposit"} />
+      <TransactionItem amount={1000} type={"deposit"} />
+      <TransactionItem amount={1000} type={"deposit"} />
+      <TransactionItem amount={1000} type={"deposit"} />
+      <TransactionItem amount={1000} type={"deposit"} />
+      {/* {user.transactions.map((t, i) => (
         <TransactionItem
           key={i}
           id={t?.id}
@@ -19,7 +24,7 @@ export default function Transactions() {
           date={t?.date}
           type={t?.type}
         />
-      ))}
+      ))} */}
     </div>
   );
 }

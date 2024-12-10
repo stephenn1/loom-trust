@@ -13,7 +13,7 @@ export default function Dashboard() {
   const user = useSelector((state: RootState) => state.user);
 
   return (
-    <div className="grid gap-5 sm:gap-10 p-5 sm:p-10 h-full overflow-y-scroll overflow-x-hidden custom-scroll-bar bg-secondary">
+    <div className="grid gap-5 sm:gap-10 p-5 sm:p-10 h-full overflow-y-scroll overflow-x-hidden custom-scroll-bar">
       {/* Information */}
       <div className="grid gap-3">
         <h3 className="font-bold text-lg sm:text-2xl text-gray-700">

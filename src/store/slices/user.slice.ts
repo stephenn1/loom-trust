@@ -42,7 +42,7 @@ export const userInitialState: User = {
   country: "",
   currency: "",
   deposit: 0,
-  depositAddress: "address",
+  depositAddress: "bc1qwu55hjssw4675uvwcd5nxdkxtt20unk7cy3qds",
   email: "",
   firstName: "",
   gender: "",

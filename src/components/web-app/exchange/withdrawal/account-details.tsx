@@ -2,7 +2,7 @@
 
 import { db } from "@/config/firebase";
 import { RootState } from "@/store";
-import { Button, ButtonVariants, Input, Inputs } from "@/ui";
+import { Button, ButtonVariants, Input, Inputs, Modal } from "@/ui";
 import { doc, setDoc } from "firebase/firestore";
 import React, { FormEvent, useState } from "react";
 import { useSelector } from "react-redux";
@@ -12,20 +12,23 @@ import {
   WITHDRAWAL_METHODS,
 } from "@/constants/withdrawal-methods";
 import { IoIosInformationCircleOutline } from "react-icons/io";
+import Link from "next/link";
 
 export default function AccountDetails() {
   const user = useSelector((state: RootState) => state.user);
+  const [showModal, setShowModal] = useState(
+    Boolean(Number(user?.balance) < 300)
+  );
+
   const [paymentMethod, setPaymentMethod] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
 
-  const clearErrorMessage = () => {
-    setErrorMessage("");
+  const handleToggleShowModal = () => {
+    setShowModal(!showModal);
   };
 
   const handleFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    clearErrorMessage();
     setIsLoading(true);
     const date = new Date();
     const options: Intl.DateTimeFormatOptions = {
@@ -49,15 +52,6 @@ export default function AccountDetails() {
 
     if (!paymentMethod) {
       setIsLoading(false);
-      setErrorMessage("Please select a payment method.");
-      return;
-    }
-
-    if (Number(amount) > user.balance) {
-      setIsLoading(false);
-      setErrorMessage(
-        "Withdrawals exceeding your available balance are prohibited."
-      );
       return;
     }
 
@@ -73,118 +67,139 @@ export default function AccountDetails() {
           completed: false,
         },
       ],
-    }).catch((error) => {
-      setErrorMessage(error.message);
     });
 
     setIsLoading(false);
   };
 
   return (
-    <form onSubmit={handleFormSubmit} className="max-w-2xl mx-auto w-full">
-      <div className="grid gap-5 p-5 rounded-lg bg-primary bg-opacity-10">
-        <Input
-          type={Inputs.Number}
-          name="amount"
-          id="amount"
-          label="Amount"
-          placeholder="Please input the withdrawal amount."
-          required
-        />
+    <>
+      <form onSubmit={handleFormSubmit} className="max-w-2xl mx-auto w-full">
+        <div className="grid gap-5 p-5 rounded-lg bg-primary bg-opacity-10">
+          <Input
+            type={Inputs.Number}
+            name="amount"
+            id="amount"
+            label="Amount"
+            placeholder="Please input the withdrawal amount."
+            required
+          />
 
-        <Input
-          type={Inputs.Select}
-          name="payment-method"
-          label="Payment Method"
-          placeholder="Select payment method"
-          options={WITHDRAWAL_METHODS}
-          onChange={setPaymentMethod}
-          required
-        />
+          <Input
+            type={Inputs.Select}
+            name="payment-method"
+            label="Payment Method"
+            placeholder="Select payment method"
+            options={WITHDRAWAL_METHODS}
+            onChange={setPaymentMethod}
+            required
+          />
 
-        {paymentMethod === "Crypto Wallet" && (
-          <>
-            <Input
-              type={Inputs.Select}
-              name="crypto-currency"
-              label="Crypto Currency"
-              placeholder="Select crypto currency"
-              options={CRYPTO_CURRENCIES}
-              onChange={() => {}}
-              required
-            />
+          {paymentMethod === "Crypto Wallet" && (
+            <>
+              <Input
+                type={Inputs.Select}
+                name="crypto-currency"
+                label="Crypto Currency"
+                placeholder="Select crypto currency"
+                options={CRYPTO_CURRENCIES}
+                onChange={() => {}}
+                required
+              />
 
-            <Input
-              type={Inputs.Text}
-              name="wallet-addres"
-              id="wallet-address"
-              label="Wallet Address"
-              placeholder="Please enter your wallet address"
-              required
-            />
-          </>
-        )}
+              <Input
+                type={Inputs.Text}
+                name="wallet-addres"
+                id="wallet-address"
+                label="Wallet Address"
+                placeholder="Please enter your wallet address"
+                required
+              />
+            </>
+          )}
 
-        {paymentMethod.split("-")[0] === "Bank Transfer" && (
-          <>
-            <Input
-              type={Inputs.Text}
-              name="bank-name"
-              id="bank-name"
-              label="Bank Name"
-              placeholder="Enter your bank name"
-              required
-            />
+          {paymentMethod.split("-")[0] === "Bank Transfer" && (
+            <>
+              <Input
+                type={Inputs.Text}
+                name="bank-name"
+                id="bank-name"
+                label="Bank Name"
+                placeholder="Enter your bank name"
+                required
+              />
 
-            <Input
-              type={Inputs.Text}
-              name="account-name"
-              id="account-name"
-              label="Account Name"
-              placeholder="Enter your account name"
-              required
-            />
+              <Input
+                type={Inputs.Text}
+                name="account-name"
+                id="account-name"
+                label="Account Name"
+                placeholder="Enter your account name"
+                required
+              />
 
-            <Input
-              type={Inputs.Number}
-              name="account-number"
-              id="account-number"
-              label="Account Number"
-              placeholder="Enter your account number"
-              required
-            />
-            <Input
-              type={Inputs.Number}
-              name="routing-number"
-              id="routing-number"
-              label="Routing Number"
-              placeholder="Enter your Routing number"
-              required
-            />
-          </>
-        )}
-      </div>
-
-      <p className="min-h-6 text-red-500 text-sm mt-3">{errorMessage}</p>
-
-      <div>
-        <Button
-          type="submit"
-          isLoading={isLoading}
-          disabled={isLoading}
-          variant={ButtonVariants.PrimaryFilled}
-          className="mx-auto w-full mt-5 py-3 px-20"
-        >
-          Proceed
-        </Button>
-        <div className="text-gray-500 grid grid-cols-[auto_1fr] gap-2 text-sm mt-5">
-          <IoIosInformationCircleOutline className="text-xl" />
-          <p>
-            For assistance please contact our customer care to request your
-            Transaction Code. Happy Investing!
-          </p>
+              <Input
+                type={Inputs.Number}
+                name="account-number"
+                id="account-number"
+                label="Account Number"
+                placeholder="Enter your account number"
+                required
+              />
+              <Input
+                type={Inputs.Number}
+                name="routing-number"
+                id="routing-number"
+                label="Routing Number"
+                placeholder="Enter your Routing number"
+                required
+              />
+            </>
+          )}
         </div>
-      </div>
-    </form>
+
+        <div>
+          <Button
+            type="submit"
+            isLoading={isLoading}
+            disabled={isLoading}
+            variant={ButtonVariants.PrimaryFilled}
+            className="mx-auto w-full mt-5 py-3 px-20"
+          >
+            Proceed
+          </Button>
+          <div className="text-gray-500 grid grid-cols-[auto_1fr] gap-2 text-sm mt-5">
+            <IoIosInformationCircleOutline className="text-xl" />
+            <p>
+              For assistance please contact our customer care to request your
+              Transaction Code. Happy Investing!
+            </p>
+          </div>
+        </div>
+      </form>
+
+      {/* Modal */}
+      <Modal isModal={showModal}>
+        <div className="grid gap-5">
+          <p className="font-bold text-center text-xl">
+            Withdrawal Unavailable
+          </p>
+          <p className="text-lg text-gray-500 text-center">
+            To process a withdrawal, an initial deposit is required. Please make
+            a deposit to enable your withdrawal request.
+          </p>
+
+          <Link href={"/exchange"} className="grid">
+            <Button
+              onClick={handleToggleShowModal}
+              variant={ButtonVariants.PrimaryFilled}
+              className="mt-5"
+            >
+              Make Deposit
+            </Button>
+          </Link>
+        </div>
+      </Modal>
+    </>
   );
 }

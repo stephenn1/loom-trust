@@ -1,51 +1,37 @@
 import React from "react";
-import { FiArrowDownLeft, FiArrowUpRight } from "react-icons/fi";
 
 interface TransactionItemProps {
   type: "deposit" | "withdrawal" | "profit";
   amount: number;
-  completed: boolean;
-  date: string;
-  id: string;
 }
 
 export default function TransactionItem({
-  id,
   amount,
-  completed,
   type,
-  date,
 }: TransactionItemProps) {
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-3 xl:grid-cols-5 gap-5 justify-between bg-secondary p-5">
+    <div className="grid grid-cols-[repeat(auto-fit,_minmax(100px,_1fr))] gap-5 justify-between bg-secondary p-5 border border-gray-300 rounded-md">
       <div className="grid gap-2">
-        <p className="text-xs font-semibold capitalize text-gray-400 whitespace-nowrap">
+        <p className="text-xs font-semibold capitalize text-gray-500 whitespace-nowrap">
           Transaction ID
         </p>
-        <p className="text-sm text-gray-700">#{id.substring(0, 8)}...</p>
+        <p className="text-sm text-gray-900">{type}</p>
       </div>
 
       <div className="grid gap-2">
-        <p className="text-xs font-semibold capitalize text-gray-400 whitespace-nowrap">
+        <p className="text-xs font-semibold capitalize text-gray-500 whitespace-nowrap">
           Type
         </p>
-        <div className="grid grid-flow-col items-center w-max gap-1 capitalize">
-          {type === "withdrawal" ? (
-            <FiArrowUpRight className="text-primary text-xl" />
-          ) : (
-            <FiArrowDownLeft className="text-primary text-xl" />
-          )}
-          <p className="text-sm text-gray-700">{type}</p>
-        </div>
+        <p className="text-sm text-gray-900">{type}</p>
       </div>
 
       <div className="grid gap-2">
-        <p className="text-xs font-semibold capitalize text-gray-400 whitespace-nowrap">
+        <p className="text-xs font-semibold capitalize text-gray-500 whitespace-nowrap">
           Amount
         </p>
-        <p className="text-sm text-gray-700">
+        <p className="text-sm text-gray-900">
           ${" "}
-          {Number(amount)?.toLocaleString("en-US", {
+          {amount?.toLocaleString("en-US", {
             style: "decimal",
             minimumFractionDigits: 2,
             maximumFractionDigits: 2,
@@ -54,24 +40,31 @@ export default function TransactionItem({
       </div>
 
       <div className="grid gap-2">
-        <p className="text-xs font-semibold capitalize text-gray-400 whitespace-nowrap">
-          Date
+        <p className="text-xs font-semibold capitalize text-gray-500 whitespace-nowrap">
+          To/From
         </p>
-        <p className="text-sm text-gray-700">{date}</p>
+        <p className="text-sm text-gray-900">{type}</p>
       </div>
 
       <div className="grid gap-2">
-        <p className="text-xs font-semibold capitalize text-gray-400 whitespace-nowrap">
+        <p className="text-xs font-semibold capitalize text-gray-500 whitespace-nowrap">
+          Date
+        </p>
+        <p className="text-sm text-gray-900">{type}</p>
+      </div>
+
+      <div className="grid gap-2">
+        <p className="text-xs font-semibold capitalize text-gray-500 whitespace-nowrap">
           Status
         </p>
         <span
-          className={`block w-20 lg:w-28 h-max text-center text-xs lg:text-xs text-white border py-1 rounded-lg capitalize ${
-            completed
-              ? "bg-green-500 border-green-500"
-              : "bg-yellow-500 border-yellow-500"
+          className={`block w-20 lg:w-28 h-max text-center text-xs lg:text-xs border py-1 rounded-lg capitalize ${
+            status
+              ? "bg-green-500 border-green-500 bg-opacity-10 text-green-500"
+              : "bg-yellow-500 border-yellow-500 bg-opacity-10 text-yellow-500"
           }`}
         >
-          {completed ? "completed" : "pending"}
+          {status ? "completed" : "pending"}
         </span>
       </div>
     </div>

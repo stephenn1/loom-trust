@@ -103,7 +103,7 @@ export default function Investment() {
             deposit to proceed with your trading activities.{" "}
           </p>
 
-          <Link href={"/deposit"} className="grid">
+          <Link href={"/exchange"} className="grid">
             <Button
               onClick={handleToggleShowModal}
               variant={ButtonVariants.PrimaryFilled}
