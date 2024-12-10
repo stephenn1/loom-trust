@@ -1,4 +1,5 @@
 import AboutUsSection from "@/components/web-site/home-page/about-us-section";
+import ContactUsSection from "@/components/web-site/home-page/contact-us";
 import Faqs from "@/components/web-site/home-page/faqs";
 import HeroSection from "@/components/web-site/home-page/hero-section";
 import HowToUse from "@/components/web-site/home-page/how-to-use";
@@ -20,6 +21,7 @@ export default function Home() {
       <MarketOverview />
       <WhyChooseUs />
       <Faqs />
+      <ContactUsSection />
     </main>
   );
 }
