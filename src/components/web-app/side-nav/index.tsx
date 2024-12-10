@@ -34,7 +34,7 @@ export default function SideNav() {
       </Link>
 
       <nav className="grid gap-5 content-start">
-        {WEB_APP_NAVIGATION.slice(0, 4).map((n, i) => (
+        {WEB_APP_NAVIGATION.slice(0, 5).map((n, i) => (
           <NavigationItem key={i} icon={n.icon} title={n.title} url={n.url} />
         ))}
       </nav>
@@ -72,11 +72,13 @@ export default function SideNav() {
             )}
           </div>
 
-          <div>
-            <p className="text-sm font-semibold text-white">
+          <div className="overflow-hidden">
+            <p className="text-sm font-semibold text-white overflow-hidden text-ellipsis text-nowrap">
               {user.firstName} {user.lastName}
             </p>
-            <p className="text-sm font-semibold text-gray-300">{user.email}</p>
+            <p className="text-sm font-semibold text-gray-300 overflow-hidden text-ellipsis">
+              {user.email}asdasd
+            </p>
           </div>
 
           <button className="text-white text-xl">

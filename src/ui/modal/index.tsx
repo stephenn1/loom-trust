@@ -8,12 +8,12 @@ interface ModalProps {
 export function Modal({ children, isModal }: ModalProps) {
   return (
     <div
-      className={`bg-black bg-opacity-50 z-10 fixed top-0 left-0 w-full h-full p-5 grid transition-all overflow-hidden ${
+      className={`bg-black bg-opacity-60 backdrop-blur-sm z-10 fixed top-0 left-0 w-full h-full p-5 grid content-center transition-all overflow-hidden ${
         isModal ? "opacity-100 visible" : "opacity-0 invisible"
       }`}
     >
       <div
-        className={`bg-white w-full h-full grid max-w-xl rounded-md ml-auto relative overflow-hidden`}
+        className={`bg-white p-5 sm:p-10 w-full max-w-lg mx-auto rounded-lg`}
       >
         {children}
       </div>

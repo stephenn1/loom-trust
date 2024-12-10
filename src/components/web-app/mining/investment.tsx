@@ -1,12 +1,15 @@
 "use client";
 
+import { Button, ButtonVariants, Modal } from "@/ui";
+import Link from "next/link";
 import React, { useState } from "react";
 import { FaBtc } from "react-icons/fa6";
+import { IoCloseCircleOutline } from "react-icons/io5";
 
 export default function Investment() {
   const [showModal, setShowModal] = useState(false);
 
-  const handleToggleModal = () => {
+  const handleToggleShowModal = () => {
     setShowModal(!showModal);
   };
 
@@ -19,40 +22,34 @@ export default function Investment() {
       </div>
 
       <button
-        onClick={handleToggleModal}
+        onClick={handleToggleShowModal}
         className="py-3 bg-[#0faf59] rounded-md text-white w-full"
       >
         Buy Contract
       </button>
 
-      {/* <div
-        className={`fixed top-0 left-0 w-full h-full p-5 grid items-center transition-all ${
-          showModal ? "opacity-100 visible" : "opacity-0 invisible"
-        }`}
-      >
-        <button className="absolute top-0 left-0 bg-black bg-opacity-30 backdrop-blur-[1px] w-full h-full z-10 "></button>
-        <div className="bg-white z-20 w-full mx-auto max-w-lg grid grid-rows-[auto_1fr_auto] gap-10 rounded-lg relative p-5">
-          <button
-            onClick={handleToggleModal}
-            className="ml-auto w-max block text-2xl text-gray-700"
-          >
-            <MdOutlineCancel />
+      <Modal isModal={showModal}>
+        <div className="grid gap-5">
+          <button onClick={handleToggleShowModal} className="ml-auto">
+            <IoCloseCircleOutline className="text-black text-3xl" />
           </button>
-          <div className="grid gap-5 text-center">
-            <p className="text-gray-700 font-semibold text-xl sm:text-2xl">
-              Deposit Required
-            </p>
-            <p className="text-gray-600 sm:text-lg px-5">
-              To proceed with purchasing a contract, please make a deposit. Once
-              your deposit is confirmed, you&apos;ll be able to complete your
-              purchase.
-            </p>
-          </div>
-          <Link href={"/finance?active-tab=deposit"} className="grid">
-            <Button >Make a Deposit</Button>
+          <p className="font-bold text-center text-xl">Mining Unavailable</p>
+          <p className="text-lg text-gray-500 text-center">
+            A deposit is required to purchase a contract. Please make a deposit
+            to proceed.
+          </p>
+
+          <Link href={"/exchange"} className="grid">
+            <Button
+              onClick={handleToggleShowModal}
+              variant={ButtonVariants.PrimaryFilled}
+              className="mt-5"
+            >
+              Make Deposit
+            </Button>
           </Link>
         </div>
-      </div> */}
+      </Modal>
     </div>
   );
 }
