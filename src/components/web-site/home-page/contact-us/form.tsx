@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, Input, Inputs } from "@/ui";
+import { Button, ButtonVariants, Input, Inputs } from "@/ui";
 import React, { FormEvent, useEffect, useState } from "react";
 import { FaCircleCheck } from "react-icons/fa6";
 import { IoIosSend } from "react-icons/io";
@@ -61,7 +61,12 @@ export default function Form() {
       />
 
       {/* Submit Buttond */}
-      <Button type="submit" isLoading={isLoading} disabled={isLoading}>
+      <Button
+        type="submit"
+        variant={ButtonVariants.PrimaryFilled}
+        isLoading={isLoading}
+        disabled={isLoading}
+      >
         <IoIosSend className="text-2xl" />
         Send Mail
       </Button>

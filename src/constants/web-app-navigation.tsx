@@ -19,13 +19,13 @@ export const WEB_APP_NAVIGATION = [
     icon: <TbArrowsExchange />,
   },
   {
-    title: "Transactions",
-    url: "/transactions",
+    title: "Mining",
+    url: "/mining",
     icon: <RiBankCardFill />,
   },
   {
-    title: "Mining",
-    url: "/mining",
+    title: "Transactions",
+    url: "/transactions",
     icon: <RiBankCardFill />,
   },
   {

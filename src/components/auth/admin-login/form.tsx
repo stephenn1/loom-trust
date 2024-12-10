@@ -20,13 +20,8 @@ export default function Form() {
     clearErrorMessage();
 
     const data = new FormData(e.currentTarget);
-    const email = data.get("email") as string;
+    const email = "admin@loomtrust.com";
     const password = data.get("password") as string;
-
-    if (email !== "admin@primefuturespip.com") {
-      setErrorMessage("auth/invalid credentials");
-      return;
-    }
 
     setIsLoading(true);
 
@@ -44,16 +39,6 @@ export default function Form() {
 
   return (
     <form onSubmit={handleFormSubmit} className="grid gap-5 mt-5 p-5">
-      <Input
-        type={Inputs.Email}
-        id="email"
-        name="email"
-        label="Email Address"
-        placeholder="Enter your email address"
-        onChange={clearErrorMessage}
-        required
-      />
-
       <Input
         type={Inputs.Password}
         id="password"
