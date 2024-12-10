@@ -13,7 +13,7 @@ export default function WhyChooseUs() {
             Why Choose Us
           </h2>
           <p className="text-gray-500 text-center text-lg sm:text-xl max-w-lg mx-auto">
-            Revolutionizing your crypto experience with trust.
+            What you will gain
           </p>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 mt-20">
