@@ -61,12 +61,7 @@ export default function Form() {
       />
 
       {/* Submit Buttond */}
-      <Button
-        type="submit"
-        variant="filled"
-        isLoading={isLoading}
-        disabled={isLoading}
-      >
+      <Button type="submit" isLoading={isLoading} disabled={isLoading}>
         <IoIosSend className="text-2xl" />
         Send Mail
       </Button>
