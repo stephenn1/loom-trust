@@ -37,7 +37,7 @@ export default function Navigation() {
           <Link href={"/login"} className="grid">
             <Button variant={ButtonVariants.PrimaryOutlined}>Login</Button>
           </Link>
-          <Link href={"/registration"} className="grid">
+          <Link href={"/sign-up"} className="grid">
             <Button variant={ButtonVariants.PrimaryFilled}>Sign Up</Button>
           </Link>
         </div>
@@ -92,7 +92,7 @@ export default function Navigation() {
           <Link href={"/login"} className="grid">
             <Button variant={ButtonVariants.PrimaryOutlined}>Login</Button>
           </Link>
-          <Link href={"/registration"} className="grid">
+          <Link href={"/sign-up"} className="grid">
             <Button variant={ButtonVariants.PrimaryFilled}> Sign Up</Button>
           </Link>
         </div>

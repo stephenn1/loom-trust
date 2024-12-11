@@ -5,7 +5,7 @@ import OtherLinks from "./other-links";
 
 export default function Footer() {
   return (
-    <footer className="px-4 md:px-16">
+    <footer className="px-4 pt-16 md:px-16">
       <div className="grid grid-flow-col gap-3 w-max items-center">
         {/* Logo */}
         <Image
