@@ -298,7 +298,7 @@ export default function Page() {
                 href={"mailto:support@primefuturespip.com"}
                 className="text-primary transition-all hover:underline"
               >
-                support@primefuturespip.com
+                support@Loomtrust.com
               </Link>
             </p>
             <p>

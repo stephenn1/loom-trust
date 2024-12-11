@@ -2,6 +2,7 @@
 
 import { Button, ButtonVariants, Icon, Icons } from "@/ui";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 
 export default function HeroSection() {
@@ -52,18 +53,20 @@ export default function HeroSection() {
             <span>Crypto Platform</span>
           </h2>
           <p
-            className={`text-xl sm:text-3xl text-center lg:text-left max-w-xl mx-auto lg:mx-0 text-gray-500 sm:leading-[1.7] lg:leading-[1.7] xl:leading-10`}
+            className={`text-lg sm:text-2xl text-center lg:text-left max-w-xl mx-auto lg:mx-0 text-gray-500 sm:leading-[1.7] lg:leading-[1.7] xl:leading-10`}
           >
             Send, receive, trade and invest in Bitcoin and cryptocurrency all in
             one safe and simple Platform.
           </p>
-          <Button
-            variant={ButtonVariants.PrimaryFilled}
-            className="w-64 mt-4 mx-auto lg:mx-0"
-          >
-            Get Started Now{" "}
-            <Icon type={Icons.ArrowRight} size={16} color="#FFFFFF" />
-          </Button>
+          <Link href={"/sign-up"}>
+            <Button
+              variant={ButtonVariants.PrimaryFilled}
+              className="w-64 mt-4 mx-auto lg:mx-0"
+            >
+              Get Started Now{" "}
+              <Icon type={Icons.ArrowRight} size={16} color="#FFFFFF" />
+            </Button>
+          </Link>
         </div>
 
         <span

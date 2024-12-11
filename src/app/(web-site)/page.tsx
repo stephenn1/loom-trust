@@ -7,6 +7,8 @@ import MarketOverview from "@/components/web-site/home-page/market-overview";
 import OurServicesSection from "@/components/web-site/home-page/our-services-section";
 import Partners from "@/components/web-site/home-page/partners-logo";
 import Statistics from "@/components/web-site/home-page/statistics";
+import Testimonials from "@/components/web-site/home-page/testimonials";
+import WhyBitcoin from "@/components/web-site/home-page/why-bitcoin";
 import WhyChooseUs from "@/components/web-site/home-page/why-choose-us";
 
 export default function Home() {
@@ -15,11 +17,13 @@ export default function Home() {
       <HeroSection />
       <Statistics />
       <AboutUsSection />
+      <WhyBitcoin />
       <OurServicesSection />
       <HowToUse />
       <Partners />
       <MarketOverview />
       <WhyChooseUs />
+      <Testimonials />
       <Faqs />
       <ContactUsSection />
     </main>

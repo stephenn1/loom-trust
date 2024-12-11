@@ -27,13 +27,13 @@ export default function OtherLinks() {
       <div className="flex flex-col gap-5">
         {" "}
         <Link
-          href={"/"}
+          href={"/terms-and-conditions"}
           className="transition-all hover:underline hover:text-primary"
         >
           Terms and Conditions
         </Link>
         <Link
-          href={"/"}
+          href={"/privacy-policy"}
           className="transition-all hover:underline hover:text-primary"
         >
           Privacy Policy
