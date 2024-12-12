@@ -1,5 +1,6 @@
 import { BiSupport } from "react-icons/bi";
 import { RiBankCardFill, RiCoinsFill, RiDashboardFill } from "react-icons/ri";
+import { GiMining } from "react-icons/gi";
 import { TbArrowsExchange } from "react-icons/tb";
 
 export const WEB_APP_NAVIGATION = [
@@ -21,7 +22,7 @@ export const WEB_APP_NAVIGATION = [
   {
     title: "Mining",
     url: "/mining",
-    icon: <RiBankCardFill />,
+    icon: <GiMining />,
   },
   {
     title: "Transactions",

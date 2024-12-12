@@ -23,7 +23,7 @@ export default function Testimonials() {
       </div>
 
       <div className="overflow-x-auto w-full scrollbar-hidden mt-10 sm:mt-16">
-        <Marquee speed={30}>
+        <Marquee speed={30} pauseOnHover>
           <div className="grid grid-cols-[repeat(10,_300px)] gap-5 select-none mx-3">
             {TESTIMONIALS.map((t, i) => (
               <Card
