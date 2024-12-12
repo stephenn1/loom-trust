@@ -5,10 +5,10 @@ import Link from "next/link";
 import React, { useState } from "react";
 
 const NAVIGATION_SCHEMA = [
-  { title: "About Us", url: "/pricing" },
+  { title: "About Us", url: "/about-us" },
   { title: "Services", url: "/our-services" },
   { title: "Contact Us", url: "/contact-us" },
-  { title: "Faq", url: "/contact-us" },
+  { title: "Faq", url: "/faq" },
 ];
 
 export default function Navigation() {
