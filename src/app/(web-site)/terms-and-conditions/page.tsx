@@ -121,8 +121,8 @@ export default function Page() {
                 <strong>Deposit Requirements:</strong> Users must make an
                 initial deposit to access certain features, ensuring access to
                 secure services and enabling platform functionality. The deposit
-                will reflect in the user's account immediately upon successful
-                completion.
+                will reflect in the user&apos;s account immediately upon
+                successful completion.
               </li>
               <li>
                 <strong>Transaction Fees:</strong> Any applicable fees will be

@@ -36,7 +36,7 @@ export default function WhyBitcoin() {
               <h4 className=" text-xl font-semibold md:text-2xl text-primary">
                 Use like money
               </h4>
-              <p className="text-gray-700 text-lg xl:text-2xl sm:text-xl  ">
+              <p className="text-gray-700 text-lg sm:text-xl  ">
                 You can use Bitcoin to pay for goods and services worldwide,
                 just like cash.
               </p>
@@ -49,9 +49,9 @@ export default function WhyBitcoin() {
                 Authenticity
               </h4>
               <p className="text-gray-700 text-lg sm:text-xl">
-                It's easy to verify the authenticity of BTC. Actually, it's
-                effectively impossible to transact with fake bitcoin, as opposed
-                to many gold scams.
+                It&apos;s easy to verify the authenticity of BTC. Actually,
+                it&apos;s effectively impossible to transact with fake bitcoin,
+                as opposed to many gold scams.
               </p>
             </div>
           </div>
