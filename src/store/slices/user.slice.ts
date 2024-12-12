@@ -1,3 +1,4 @@
+import { TransactionStatus, TransactionType } from "@/@types";
 import { createSlice } from "@reduxjs/toolkit";
 
 export interface User {
@@ -29,10 +30,11 @@ export interface User {
 
 export interface Transaction {
   id: string;
-  type: "deposit" | "withdrawal" | "profit";
+  type: TransactionType;
   amount: number;
+  source: string;
   date: string;
-  completed: boolean;
+  status: TransactionStatus;
 }
 
 export const userInitialState: User = {

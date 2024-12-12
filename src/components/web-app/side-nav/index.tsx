@@ -77,7 +77,7 @@ export default function SideNav() {
               {user.firstName} {user.lastName}
             </p>
             <p className="text-sm font-semibold text-gray-300 overflow-hidden text-ellipsis">
-              {user.email}asdasd
+              {user.email}
             </p>
           </div>
 
