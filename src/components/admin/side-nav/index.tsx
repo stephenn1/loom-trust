@@ -1,19 +1,60 @@
 "use client";
 
 import React from "react";
-import Navigation from "./navigation";
 import Image from "next/image";
+import { FiLogOut } from "react-icons/fi";
+import NavigationItem from "./navigation-item";
+import { ADMIN_NAVIGATION } from "@/constants/admin-navigation";
+import Link from "next/link";
 
 export default function SideNav() {
   return (
     <div
-      className={`lg:relative order-1 lg:order-none grid w-full lg:w-64 lg:grid-rows-[auto_1fr_auto] gap-10 lg:h-full h-max px-8 py-2 sm:py-5 bg-white lg:border-r border-gray-300`}
+      className={`bg-primary hidden lg:grid grid-rows-[auto_1fr_auto] gap-20 w-72 p-5`}
     >
-      <span className="relative hidden lg:block w-40">
-        <Image src={"/logo/logo.svg"} width={300} height={300} alt="Logo" />
-      </span>
+      <Link href={"/dashboard"}>
+        <div className="grid grid-flow-col gap-3 w-max items-center">
+          {/* Logo */}
+          <Image
+            src={"/logo-2.svg"}
+            width={300}
+            height={300}
+            alt="Entobo Logo"
+            className="w-8"
+          />
+          <p className="font-semibold text-gray-000 text-xl text-white">
+            LoomTrust
+          </p>
+        </div>
+      </Link>
 
-      <Navigation />
+      <nav className="grid gap-5 content-start">
+        {ADMIN_NAVIGATION.slice(0, 5).map((n, i) => (
+          <NavigationItem key={i} icon={n.icon} title={n.title} url={n.url} />
+        ))}
+      </nav>
+
+      <div className=" grid grid-cols-[auto_1fr_auto] gap-3 items-center border-t border-white border-opacity-50 pt-5">
+        {/* User Image */}
+        <div className="relative w-max">
+          <div className="grid bg-white place-content-center w-10 h-10 rounded-full mx-auto relative overflow-hidden">
+            <span className="text-sm font-semibold text-primary">AD</span>
+          </div>
+        </div>
+
+        <div className="overflow-hidden">
+          <p className="text-sm font-semibold text-white overflow-hidden text-ellipsis text-nowrap">
+            Admin
+          </p>
+          <p className="text-sm font-semibold text-gray-300 overflow-hidden text-ellipsis">
+            admin@loomtrust.com
+          </p>
+        </div>
+
+        <button className="text-white text-xl">
+          <FiLogOut />
+        </button>
+      </div>
     </div>
   );
 }

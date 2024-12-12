@@ -57,13 +57,9 @@ export default function Header() {
       <Modal isModal={Boolean(user?.id && !user?.prompt?.seen)}>
         <div className="grid gap-5">
           <p className="font-bold text-center text-xl">{user.prompt.title}</p>
-          <div className="grid gap-3">
-            {user.prompt.message.split("/n").map((v, index) => (
-              <p key={index} className="text-lg text-gray-500 text-center">
-                {v}
-              </p>
-            ))}
-          </div>
+          <p className="text-lg text-gray-500 text-center whitespace-pre-wrap">
+            {user.prompt.message}
+          </p>
 
           <Button
             onClick={handleContinue}
@@ -74,7 +70,6 @@ export default function Header() {
           </Button>
         </div>
       </Modal>
-      {/* </div> */}
     </>
   );
 }

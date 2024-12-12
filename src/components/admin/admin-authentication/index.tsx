@@ -1,7 +1,7 @@
 "use client";
 
 import { PageLoader } from "@/ui";
-import { useEffect, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "@/config/firebase";
 import { useRouter } from "next/navigation";
@@ -18,11 +18,11 @@ export default function AdminAuthentication({
   const router = useRouter();
   const dispatch = useDispatch();
 
-  const [isAuth, setIsAuth] = useState(true);
+  const [isAuth, setIsAuth] = useState(false);
 
   const handleCheckAdminAuth = () => {
     onAuthStateChanged(auth, async (user) => {
-      if (user && user.email === "admin@primefuturespip.com") {
+      if (user && user.email === "admin@loomtrust.com") {
         dispatch(
           setAdminUser({
             id: user?.uid,
@@ -36,7 +36,7 @@ export default function AdminAuthentication({
     });
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     handleCheckAdminAuth();
   }, []);
 

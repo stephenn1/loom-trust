@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 
 interface CardProps {
-  profit: number;
+  balance: number;
   email: string;
   firstName: string;
   lastName: string;
@@ -11,7 +11,7 @@ interface CardProps {
 }
 
 export default function Card({
-  profit,
+  balance,
   email,
   firstName,
   lastName,
@@ -20,40 +20,38 @@ export default function Card({
   return (
     <div className="grid w-full grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 gap-5 justify-between bg-secondary p-5">
       <div className="grid gap-2">
-        <p className="text-xs font-semibold capitalize text-gray-400 whitespace-nowrap">
+        <p className="text-xs font-semibold capitalize text-gray-500 whitespace-nowrap">
           First Name
         </p>
-        <p className="text-sm text-gray-700">{firstName}</p>
+        <p className="text-sm text-gray-900">{firstName}</p>
       </div>
 
       <div className="grid gap-2">
-        <p className="text-xs font-semibold capitalize text-gray-400 whitespace-nowrap">
+        <p className="text-xs font-semibold capitalize text-gray-500 whitespace-nowrap">
           Last Name
         </p>
         <div className="grid grid-flow-col items-center w-max gap-1">
-          {/* <FiArrowUpRight className="text-primary text-xl" /> */}
-          {/* <FiArrowDownLeft className="text-primary text-xl" /> */}
-          <p className="text-sm text-gray-700">{lastName}</p>
+          <p className="text-sm text-gray-900">{lastName}</p>
         </div>
       </div>
 
       <div className="grid gap-2">
-        <p className="text-xs font-semibold capitalize text-gray-400 whitespace-nowrap">
+        <p className="text-xs font-semibold capitalize text-gray-500 whitespace-nowrap">
           Email
         </p>
 
-        <p className="text-sm text-gray-700 w-full overflow-hidden text-ellipsis">
+        <p className="text-sm text-gray-900 w-full overflow-hidden text-ellipsis">
           {email}
         </p>
       </div>
 
       <div className="grid gap-2">
-        <p className="text-xs font-semibold capitalize text-gray-400 whitespace-nowrap">
-          Profit
+        <p className="text-xs font-semibold capitalize text-gray-500 whitespace-nowrap">
+          Balance
         </p>
-        <p className="text-sm text-gray-700">
+        <p className="text-sm text-gray-900">
           ${" "}
-          {Number(profit)?.toLocaleString("en-US", {
+          {Number(balance)?.toLocaleString("en-US", {
             style: "decimal",
             minimumFractionDigits: 2,
             maximumFractionDigits: 2,
@@ -62,16 +60,16 @@ export default function Card({
       </div>
 
       <div className="grid gap-2">
-        <p className="text-xs font-semibold capitalize text-gray-400 whitespace-nowrap">
+        <p className="text-xs font-semibold capitalize text-gray-500 whitespace-nowrap">
           Date Joined
         </p>
-        <p className="text-sm text-gray-700">
+        <p className="text-sm text-gray-900">
           {formatTimestampToDate(timestamp)}
         </p>
       </div>
 
       <div className="grid gap-2">
-        <p className="text-xs font-semibold capitalize text-gray-400 whitespace-nowrap">
+        <p className="text-xs font-semibold capitalize text-gray-500 whitespace-nowrap">
           Action
         </p>
         <Link
