@@ -21,8 +21,10 @@ export default function WhyBitcoin() {
           <div className="flex max-w-md mb-5">
             <RiCheckDoubleLine className="size-10 text-primary" />
             <div className="ml-1 mt-2">
-              <h4 className="font-bold text-lg sm:text-xl">Security</h4>
-              <p className="text-base sm:text-lg">
+              <h4 className=" text-xl font-semibold md:text-2xl text-primary">
+                Security
+              </h4>
+              <p className="text-gray-700 text-lg sm:text-xl">
                 Transactions are secured by cryptography, making it highly
                 resistant to fraud or hacking.
               </p>
@@ -31,20 +33,25 @@ export default function WhyBitcoin() {
           <div className="flex max-w-md mb-5">
             <RiCheckDoubleLine className="size-10 text-primary" />
             <div className="ml-1 mt-2">
-              <h4 className="font-bold text-lg sm:text-xl">Use like money</h4>
-              <p className="text-base sm:text-lg">
-                Transactions are secured by cryptography, making it highly
-                resistant to fraud or hacking.
+              <h4 className=" text-xl font-semibold md:text-2xl text-primary">
+                Use like money
+              </h4>
+              <p className="text-gray-700 text-lg xl:text-2xl sm:text-xl  ">
+                You can use Bitcoin to pay for goods and services worldwide,
+                just like cash.
               </p>
             </div>
           </div>
           <div className="flex max-w-md ">
-            <RiCheckDoubleLine className="size-10 text-primary" />
+            <RiCheckDoubleLine className="size-16 text-primary" />
             <div className="ml-1 mt-2">
-              <h4 className="font-bold text-lg sm:text-xl">Authenticity</h4>
-              <p className="text-base sm:text-lg">
-                Transactions are secured by cryptography, making it highly
-                resistant to fraud or hacking.
+              <h4 className=" text-xl font-semibold md:text-2xl text-primary">
+                Authenticity
+              </h4>
+              <p className="text-gray-700 text-lg sm:text-xl">
+                It's easy to verify the authenticity of BTC. Actually, it's
+                effectively impossible to transact with fake bitcoin, as opposed
+                to many gold scams.
               </p>
             </div>
           </div>

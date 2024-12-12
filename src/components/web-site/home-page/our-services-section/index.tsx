@@ -53,7 +53,7 @@ export default function OurServicesSection() {
   return (
     <section
       id="our-services"
-      className="relative layout-spacing grid gap-20 py-10"
+      className="relative layout-spacing grid gap-20 pt-20"
     >
       <h2
         className={`text-3xl lg:text-5xl text-center font-bold text-primary relative transition-all duration-500`}

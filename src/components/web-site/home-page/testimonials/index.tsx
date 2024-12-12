@@ -15,7 +15,7 @@ export default function Testimonials() {
         >
           LoomTrust users share their experiences
         </h2>
-        <p className="text-xl max-w-4xl text-center mx-auto">
+        <p className=" max-w-4xl text-gray-500 text-center text-lg sm:text-xl mx-auto">
           Renowned and relied upon by an extensive network of more than 100
           esteemed companies spanning the globe, our services exemplify
           excellence and unparalleled reliability.

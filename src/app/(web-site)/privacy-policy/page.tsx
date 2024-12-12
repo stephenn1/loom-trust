@@ -14,7 +14,7 @@ export default function Page() {
             1. Introduction
           </h2>
           <p className="text-gray-500 pl-6 sm:text-lg">
-            Loom Trust values your privacy and is committed to protecting your
+            LoomTrust values your privacy and is committed to protecting your
             personal data. This policy explains how we collect, use, share, and
             protect your information.
           </p>
@@ -26,7 +26,7 @@ export default function Page() {
             2. Information We Collect
           </h2>
           <div className="text-gray-500 pl-6 sm:text-lg grid gap-3">
-            <p>Loom Trust collects the following types of information:</p>
+            <p>LoomTrust collects the following types of information:</p>
             <ul className="list-disc text-sm sm:text-base grid gap-2">
               <li>
                 <strong>Personal Information:</strong> Name, email address,
@@ -141,9 +141,18 @@ export default function Page() {
               <li>Restrict or object to certain data processing activities.</li>
               <li>Withdraw consent for data processing where applicable.</li>
             </ul>
-            <p>
-              To exercise these rights, contact us at [Insert Contact Email].
-            </p>
+            <div className="flex">
+              <p>To exercise these rights, contact us at </p>
+              <div className="ml-1">
+                <strong>Email:</strong>{" "}
+                <Link
+                  href={"mailto:support@loomtrust.com"}
+                  className="text-primary transition-all hover:underline"
+                >
+                  support@loomtrust.com
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -209,7 +218,7 @@ export default function Page() {
             <p>
               <strong>Email:</strong>{" "}
               <Link
-                href={"mailto:support@primefuturespip.com"}
+                href={"mailto:support@loomtrust.com"}
                 className="text-primary transition-all hover:underline"
               >
                 support@loomtrust.com
