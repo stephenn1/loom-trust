@@ -4,8 +4,6 @@ import { auth } from "@/config/firebase";
 import { RootState } from "@/store";
 import { signOut } from "firebase/auth";
 import React, { useState } from "react";
-import { FaGlobe, FaUser } from "react-icons/fa6";
-import { IoChevronDown } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
 import { RiVerifiedBadgeFill } from "react-icons/ri";
 import { useSelector } from "react-redux";
@@ -41,7 +39,7 @@ export default function UserDetails() {
         {/* User Image */}
         <div className="relative w-max">
           <div className="grid bg-primary place-content-center w-10 h-10 rounded-full mx-auto relative overflow-hidden">
-            <span className="text-sm font-semibold text-white">MA</span>
+            <span className="text-sm font-semibold text-white">AD</span>
           </div>
           <span className="block bg-green-400 rounded-full w-3 h-3 absolute bottom-0 right-0"></span>
         </div>
@@ -49,11 +47,9 @@ export default function UserDetails() {
         {/* User Name */}
         {!showDetails && (
           <p className="text-center font-semibold hidden md:block text-sm text-gray-700 mt-5">
-            Marve (Admin)
+            Amin
           </p>
         )}
-
-        {!showDetails && <IoChevronDown className="text-gray-500 text-xl" />}
       </button>
 
       {/* blur bg */}
@@ -69,20 +65,10 @@ export default function UserDetails() {
         }`}
       >
         {/* Name */}
-        <div className={`grid grid-cols-[1fr_auto] gap-3 items-center`}>
-          <p className="text-ellipsis whitespace-nowrap overflow-hidden">
-            Marve
-          </p>
+        <div className={`grid grid-cols-[auto_1fr] gap-3 items-center`}>
           <RiVerifiedBadgeFill className="text-primary text-xl" />
-        </div>
-
-        {/* Id */}
-        <div
-          className={`grid grid-cols-[auto_1fr] text-gray-500 gap-3 items-center`}
-        >
-          <FaUser className="" />
-          <p className="text-ellipsis whitespace-nowrap text-sm overflow-hidden">
-            {user?.id?.substring(0, 10)}
+          <p className="text-ellipsis whitespace-nowrap overflow-hidden">
+            Admin
           </p>
         </div>
 
@@ -93,16 +79,6 @@ export default function UserDetails() {
           <MdEmail className="" />
           <p className="text-ellipsis whitespace-nowrap text-sm overflow-hidden">
             {user.email}
-          </p>
-        </div>
-
-        {/* Country*/}
-        <div
-          className={`grid grid-cols-[auto_1fr] text-gray-500 gap-3 items-center`}
-        >
-          <FaGlobe className="" />
-          <p className="text-ellipsis whitespace-nowrap text-sm overflow-hidden">
-            USA
           </p>
         </div>
 

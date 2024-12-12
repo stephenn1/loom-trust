@@ -30,11 +30,11 @@ export default function Dashboard() {
       <div className="grid grid-cols-[repeat(3,_minmax(300px,_1fr))] gap-5 h-max overflow-x-auto custom-scroll-bar pb-3">
         <PortfolioBalance value={user.balance} />
         <TotalDeposit value={user.deposit} />
-        <Withdrawals value={user.balance} />
+        <Withdrawals value={user.withdrawals} />
       </div>
 
       {/* Chart and Recent ACtivities */}
-      <div className="grid xl:grid-cols-[1fr_auto] xl:max-h-96">
+      <div className="grid gap-5 sm:gap-0 xl:grid-cols-[1fr_auto] xl:max-h-96">
         <RecentTransactions transactions={user.transactions} />
         <div className="bg-white p-5 rounded-xl xl:w-96 min-h-96 shadow-[3px_3px_10px_-7px_rgba(0,0,0,0.3)]">
           <MiniChart />

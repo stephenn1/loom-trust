@@ -1,20 +1,21 @@
-import { FaUsers, FaWallet } from "react-icons/fa";
+import { FaUsers } from "react-icons/fa";
 import { GrTransaction } from "react-icons/gr";
+import { RiDashboardFill } from "react-icons/ri";
 
 export const ADMIN_NAVIGATION = [
+  {
+    title: "Dashboard",
+    url: "/admin/dashboard",
+    icon: <RiDashboardFill />,
+  },
   {
     title: "Users",
     url: "/admin/users",
     icon: <FaUsers />,
   },
   {
-    title: "Payment Methods",
-    url: "/admin/payment-methods",
-    icon: <FaWallet />,
-  },
-  {
-    title: "Transactions",
-    url: "/admin/transactions",
+    title: "Pending Withdrawals",
+    url: "/admin/pending-withdrawals",
     icon: <GrTransaction />,
   },
 ];
