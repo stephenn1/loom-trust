@@ -13,11 +13,11 @@ export default function Page() {
           <h2 className="text-lg sm:text-xl font-semibold text-gray-700">
             1. Introduction
           </h2>
-          <p className="text-gray-500 pl-6 sm:text-lg">
-            Welcome to Loom Trust, a platform designed to provide advanced
-            trading tools and resources for users. By accessing or using our
-            services, you agree to be bound by these Terms and Conditions. If
-            you do not agree, please discontinue use of the platform
+          <p className="text-gray-500 pl-6 sm:text-lg ">
+            Welcome to LoomTrust, a platform designed for sending, receiving,
+            trading, and mining digital assets securely. . By accessing or using
+            our services, you agree to be bound by these Terms and Conditions.
+            If you do not agree, please discontinue use of the platform
             immediately. For information on how we handle your personal data,
             please refer to our{" "}
             <Link
@@ -35,7 +35,7 @@ export default function Page() {
             2. Eligibility
           </h2>
           <div className="text-gray-500 pl-6 sm:text-lg grid gap-3">
-            <p>To access our platform, you must:</p>
+            <p>To use LoomTrust, you must:</p>
             <ul className="list-disc text-sm sm:text-base grid gap-2">
               <li>
                 Be at least 18 years old or the age of majority in your
@@ -54,8 +54,8 @@ export default function Page() {
           </h2>
           <div className="text-gray-500 pl-6 sm:text-lg grid gap-3">
             <p>
-              Users are required to create an account to access certain
-              features. By registering, you agree to the following:
+              Creating an account is required to access our platform’s features.
+              By registering, you agree to the following:
             </p>
             <ul className="list-disc text-sm sm:text-base grid gap-2">
               <li>
@@ -71,7 +71,7 @@ export default function Page() {
                 activity involving your account.
               </li>
               <li>
-                Understand that Loom Trust reserves the right to suspend or
+                Understand that LoomTrust reserves the right to suspend or
                 terminate accounts for providing false information or violating
                 our terms.
               </li>
@@ -86,18 +86,23 @@ export default function Page() {
           </h2>
           <div className="text-gray-500 pl-6 sm:text-lg grid gap-3">
             <p>
-              Loom Trust offers a variety of services to its users, including:
+              LoomTrust offers a comprehensive range of cryptocurrency-related
+              services to its users, including:
             </p>
             <ul className="list-disc text-sm sm:text-base grid gap-2">
-              <li>Real-time market analysis and trading tools.</li>
               <li>
-                User-friendly interfaces for executing financial transactions.
+                Secure and seamless sending and receiving of digital assets.
               </li>
-              <li>Educational resources and guidance for trading.</li>
+              <li>
+                Advanced trading tools and resources for buying, selling, and
+                managing digital assets.
+              </li>
+              <li>Mining solutions with optimized efficiency and support.</li>
+              <li>Real-time market insights and updates.</li>
             </ul>
             <p>
-              We do not guarantee the accuracy of market information or promise
-              financial gains. Use the platform at your own risk.
+              We strive for accuracy but do not guarantee the completeness or
+              timeliness of market data.
             </p>
           </div>
         </div>
@@ -114,7 +119,10 @@ export default function Page() {
             <ul className="list-disc text-sm sm:text-base grid gap-2">
               <li>
                 <strong>Deposit Requirements:</strong> Users must make an
-                initial deposit to access certain features.
+                initial deposit to access certain features, ensuring access to
+                secure services and enabling platform functionality. The deposit
+                will reflect in the user&apos;s account immediately upon
+                successful completion.
               </li>
               <li>
                 <strong>Transaction Fees:</strong> Any applicable fees will be
@@ -157,16 +165,16 @@ export default function Page() {
           </h2>
           <div className="text-gray-500 pl-6 sm:text-lg grid gap-3">
             <p>
-              All content on Loom Trust, including logos, trademarks, and
-              software, is owned by or licensed to us. You may not:
+              All content on LoomTrust, including logos, trademarks, and
+              software, is owned by or licensed to us. Users may not:
             </p>
             <ul className="list-disc text-sm sm:text-base grid gap-2">
               <li>
                 Reproduce, distribute, or modify any platform content without
-                permission.
+                authorization.
               </li>
               <li>
-                Use our trademarks or logos without prior written consent.
+                Use LoomTrust trademarks or logos without prior written consent.
               </li>
             </ul>
           </div>
@@ -179,15 +187,18 @@ export default function Page() {
           </h2>
           <div className="text-gray-500 pl-6 sm:text-lg grid gap-3">
             <p>
-              Trading in financial markets involves significant risk, including
-              the potential loss of your entire investment. By using this
-              platform, you:
+              Cryptocurrency trading and mining involve significant risks,
+              including the potential loss of all invested funds. By using
+              LoomTrust, you:
             </p>
             <ul className="list-disc text-sm sm:text-base grid gap-2">
-              <li>Acknowledge the risks associated with trading.</li>
-              <li>Accept full responsibility for your trading decisions.</li>
+              <li>Acknowledge these inherent risks.</li>
               <li>
-                Understand that Loom Trust does not provide financial advice.
+                Accept full responsibility for your decisions and activities.
+              </li>
+              <li>
+                Understand that LoomTrust does not provide financial or
+                investment advice.
               </li>
             </ul>
           </div>
@@ -202,10 +213,13 @@ export default function Page() {
             <p>To the extent permitted by law:</p>
             <ul className="list-disc text-sm sm:text-base grid gap-2">
               <li>
-                Loom Trust shall not be held liable for any financial losses,
-                damages, or other liabilities incurred through platform use.
+                LoomTrust is not liable for financial losses, damages, or
+                liabilities incurred through platform use.
               </li>
-              <li>We do not guarantee uninterrupted or error-free service.</li>
+              <li>
+                We do not guarantee uninterrupted, error-free services or
+                specific financial outcomes.
+              </li>
             </ul>
           </div>
         </div>
@@ -239,22 +253,19 @@ export default function Page() {
             11. Governing Law and Dispute Resolution
           </h2>
           <div className="text-gray-500 pl-6 sm:text-lg grid gap-3">
-            <p>
-              These Terms are governed by the laws of [Insert Jurisdiction].
-            </p>
+            <p>These Terms are governed by the laws</p>
             <p>
               In the event of disputes, users agree to the following process:
             </p>
             <ul className="list-disc text-sm sm:text-base grid gap-2">
               <li>Attempt to resolve disputes through mediation first.</li>
-              <li>
-                If unresolved, disputes may proceed to formal legal action.
-              </li>
-              <li>
-                Any litigation must occur within the jurisdiction specified in
-                these Terms.
-              </li>
+              <li>Pursue formal legal action only if mediation fails.</li>
             </ul>
+
+            <p>
+              All litigation must occur within the jurisdiction specified in
+              these Terms.
+            </p>
           </div>
         </div>
 
@@ -287,11 +298,7 @@ export default function Page() {
             13. Contact Information
           </h2>
           <div className="text-gray-500 pl-6 sm:text-lg grid gap-3">
-            <p>
-              If you have any questions, concerns, or feedback regarding these
-              Terms and Conditions, please contact us using the following
-              information:
-            </p>
+            <p>For any questions or concerns, please contact us at:</p>
             <p>
               <strong>Email:</strong>{" "}
               <Link
@@ -302,7 +309,7 @@ export default function Page() {
               </Link>
             </p>
             <p>
-              Our support team is available to assist you during business hours.
+              Our support team is available during business hours to assist you.
             </p>
           </div>
         </div>
