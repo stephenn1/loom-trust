@@ -3,7 +3,7 @@ import Marquee from "react-fast-marquee";
 
 export default function Statistics() {
   return (
-    <section className="overflow-hidden w-screen">
+    <section className="overflow-hidden">
       <Marquee direction="right">
         <div className="flex w-full justify-around">
           <div className="text-center mx-10">

@@ -4,7 +4,7 @@ import Marquee from "react-fast-marquee";
 
 export default function Partners() {
   return (
-    <section className="overflow-hidden w-screen">
+    <section className="overflow-hidden">
       <Marquee>
         <div className="flex gap-12">
           <Image
