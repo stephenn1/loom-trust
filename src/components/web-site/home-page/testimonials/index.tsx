@@ -15,7 +15,7 @@ export default function Testimonials() {
         >
           LoomTrust users share their experiences
         </h2>
-        <p className="text-xl max-w-4xl text-center mx-auto">
+        <p className=" max-w-4xl text-gray-500 text-center text-lg sm:text-xl mx-auto">
           Renowned and relied upon by an extensive network of more than 100
           esteemed companies spanning the globe, our services exemplify
           excellence and unparalleled reliability.
@@ -23,7 +23,7 @@ export default function Testimonials() {
       </div>
 
       <div className="overflow-x-auto w-full scrollbar-hidden mt-10 sm:mt-16">
-        <Marquee speed={30}>
+        <Marquee speed={30} pauseOnHover>
           <div className="grid grid-cols-[repeat(10,_300px)] gap-5 select-none mx-3">
             {TESTIMONIALS.map((t, i) => (
               <Card

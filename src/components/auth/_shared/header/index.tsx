@@ -25,7 +25,7 @@ export default function Header() {
         </Link>
 
         {/* Navigation */}
-        <Link href={"/registration"} className="grid">
+        <Link href={"mailto:support@loomtrust.com"} className="grid">
           <button className="grid grid-flow-col items-center gap-1 bg-gray-100 rounded-md border border-gray-300 text-sm py-2 px-3 font-semibold text-gray-500">
             <BiSupport className="text-lg" />
             Contact Us

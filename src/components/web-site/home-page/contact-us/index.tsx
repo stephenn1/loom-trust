@@ -5,7 +5,7 @@ export default function ContactUsSection() {
   return (
     <section
       id="contact-us"
-      className="relative layout-spacing grid grid-rows-[auto_1fr] content-start gap-10 sm:gap-20 min-h-screen"
+      className="relative layout-spacing grid grid-rows-[auto_1fr] content-start gap-10 sm:gap-20 pt-20"
     >
       {/* Title */}
       <div className="grid gap-5">

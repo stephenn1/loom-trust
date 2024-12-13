@@ -4,7 +4,7 @@ import FaqItem from "./items";
 
 export default function Faqs() {
   return (
-    <section id="faqs" className="relative layout-spacing p-20">
+    <section id="faq" className="relative layout-spacing p-20">
       <div className="grid gap-10 sm:gap-20">
         <div className="grid gap-5">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl text-center font-bold text-primary">

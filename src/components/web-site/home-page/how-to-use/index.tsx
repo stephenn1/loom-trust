@@ -16,7 +16,7 @@ export default function HowToUse() {
             We make it easy to experience the future of money.
           </p>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 mt-20">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 mt-10 sm:mt-20">
           {HOWTOUSE.map((s, i) => (
             <Card key={i} content={s.content} img={s.img} title={s.title} />
           ))}
