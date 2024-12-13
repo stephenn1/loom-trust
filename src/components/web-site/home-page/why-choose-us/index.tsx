@@ -1,24 +1,64 @@
+"use client";
+
 import { WHY_CHOOSE_US } from "@/constants/why-choose-us";
 import React from "react";
-import Card from "./card";
+import { motion } from "motion/react";
+import Image from "next/image";
 
 export default function WhyChooseUs() {
   return (
-    <section className="relative px-4 md:px-16 lg:px-24 grid py-16">
-      <div>
-        <div className="grid">
-          <h2
-            className={`text-3xl lg:text-5xl text-center font-bold text-primary relative transition-all duration-500`}
-          >
-            Why Choose Us
-          </h2>
-          <p className="text-gray-500 text-center text-lg sm:text-xl max-w-lg mx-auto">
-            What you will gain
-          </p>
-        </div>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 mt-20">
-          {WHY_CHOOSE_US.map((s, i) => (
-            <Card key={i} content={s.content} img={s.img} title={s.title} />
+    <section className="pt-20 sm:pt-40 layout-spacing">
+      <div className="container mx-auto grid gap-10">
+        <motion.h2
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          className={`text-3xl lg:text-5xl text-center font-bold text-primary relative transition-all duration-500`}
+        >
+          Why Choose Us
+        </motion.h2>
+
+        {/* Cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+          {WHY_CHOOSE_US.map((data, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ ease: "linear" }}
+              className="p-5 sm:p-10 rounded-lg border"
+            >
+              <motion.span
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ ease: "linear" }}
+                className="grid w-40 mx-auto justify-center items-center"
+              >
+                <Image
+                  src={data.img.url}
+                  width={200}
+                  height={200}
+                  alt={data.img.alt}
+                />
+              </motion.span>
+              <div className="mt-4 grid gap-3 text-center">
+                <motion.h3
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ ease: "linear" }}
+                  className="text-xl font-semibold md:text-2xl text-primary"
+                >
+                  {data.title}
+                </motion.h3>
+                <motion.p
+                  initial={{ opacity: 0, y: 100 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ ease: "linear" }}
+                  className="text-gray-500 sm:text-lg"
+                >
+                  {data.content}
+                </motion.p>
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>
