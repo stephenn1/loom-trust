@@ -58,7 +58,6 @@ export default function AccountDetails() {
     await setDoc(doc(db, "users", user.email), {
       ...user,
       transactions: [
-        ...user.transactions,
         {
           id: uuidV4(),
           type: "withdrawal",
@@ -67,6 +66,7 @@ export default function AccountDetails() {
           source: paymentMethod,
           status: TransactionStatus.Processing,
         },
+        ...user.transactions,
       ],
     });
 
