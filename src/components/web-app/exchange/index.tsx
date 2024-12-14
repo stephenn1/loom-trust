@@ -11,7 +11,7 @@ export default function Exchange() {
   const activeTab = useSearchParams().get("active_tab");
 
   return (
-    <div className="grid grid-rows-[auto_1fr] gap-5 px-5 overflow-hidden bg-white">
+    <div className="grid grid-rows-[auto_1fr] gap-5 px-5 pb-5 overflow-hidden bg-white">
       {/* Tabs */}
       <div className="grid grid-flow-col gap-5 justify-start items-center border-b border-gray-300">
         <Link

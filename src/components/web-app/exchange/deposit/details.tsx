@@ -84,8 +84,8 @@ export default function Details() {
           </div>
         </div>
 
-        <div className="grid grid-cols-[1fr_auto] gap-3 overflow-hidden items-center">
-          <div className="overflow-hidden bg-white h-full rounded-md grid items-center px-5">
+        <div className="grid gap-3 overflow-hidden items-center">
+          <div className="overflow-hidden bg-white h-full rounded-md grid items-center px-5 py-3 text-center">
             <p className="w-full overflow-hidden text-ellipsis text-sm sm:text-base">
               {user.depositAddress}
             </p>
@@ -93,9 +93,9 @@ export default function Details() {
           <button
             type="button"
             onClick={handleCopy}
-            className="text-white bg-primary text-xl p-3 rounded-md"
+            className="bg-white text-primary border border-primary bg-opacity-20 text-sm font-semibold grid grid-flow-col justify-center gap-3 p-3 rounded-md"
           >
-            <FaRegCopy />
+            <FaRegCopy className="text-xl" /> Copy Wallet Address
           </button>
         </div>
       </div>

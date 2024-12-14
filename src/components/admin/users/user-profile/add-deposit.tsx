@@ -47,7 +47,7 @@ export default function AddDeposit({ user, refresh }: AddDepositProps) {
       transactions: [
         {
           id: uuidV4(),
-          type: "received",
+          type: "deposit",
           amount,
           source: "External",
           date: finalFormattedDate,

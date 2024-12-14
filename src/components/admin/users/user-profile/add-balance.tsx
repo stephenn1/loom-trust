@@ -47,7 +47,7 @@ export default function AddBalance({ user, refresh }: AddBalanceProps) {
       transactions: [
         {
           id: uuidV4(),
-          type: "received",
+          type: "incoming",
           amount,
           source,
           date: finalFormattedDate,
