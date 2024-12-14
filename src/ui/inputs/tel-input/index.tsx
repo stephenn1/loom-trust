@@ -54,7 +54,7 @@ export function TelInput({
   const handleKeyPress = (e: KeyboardEvent<HTMLInputElement>) => {
     const inputValue = e.currentTarget.value;
     if (e.key === "Backspace" && inputValue.includes("+")) {
-      const arr = inputValue.split(" ");
+      const arr = inputValue?.split(" ");
       arr[0] = "0";
       setPhoneNumber(arr.join("").substring(0, arr.join("").length));
       onChange?.("");

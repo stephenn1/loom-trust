@@ -58,15 +58,15 @@ export default function AccountDetails() {
     await setDoc(doc(db, "users", user.email), {
       ...user,
       transactions: [
-        ...user.transactions,
         {
           id: uuidV4(),
           type: "withdrawal",
           amount: Number(amount),
           date: finalFormattedDate,
-          source: "",
+          source: paymentMethod,
           status: TransactionStatus.Processing,
         },
+        ...user.transactions,
       ],
     });
 
@@ -122,7 +122,7 @@ export default function AccountDetails() {
             </>
           )}
 
-          {paymentMethod.split("-")[0] === "Bank Transfer" && (
+          {paymentMethod?.split("-")[0] === "Bank Transfer" && (
             <>
               <Input
                 type={Inputs.Text}
