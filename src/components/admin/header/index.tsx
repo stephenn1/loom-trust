@@ -31,7 +31,7 @@ export default function Header() {
       </span>
 
       <h2 className="font-bold text-gray-800 text-xl sm:text-2xl capitalize w-full overflow-hidden text-ellipsis">
-        {path.split("/")[path.split("/").length - 1]}
+        {path?.split("/")[path?.split("/").length - 1]}
       </h2>
 
       <UserDetails />

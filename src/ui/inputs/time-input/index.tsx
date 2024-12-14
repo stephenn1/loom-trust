@@ -35,13 +35,13 @@ export function TimeInput({
     if (!e.target.value.match(/^\d{0,2}(\s?\:?\s?\d{0,2})$/)) return;
 
     // Checks If HH is Greater Than 12
-    if (Number(e.target.value.split(":")[0].trim()) > 12) {
+    if (Number(e.target.value?.split(":")[0].trim()) > 12) {
       setInputValue("12 : ");
       return;
     }
 
     // Checks If MM is Greater Than 59
-    if (Number(e.target.value.split(" : ")[1]) > 59) {
+    if (Number(e.target.value?.split(" : ")[1]) > 59) {
       setInputValue(e.target.value.substring(0, 5) + "00");
       return;
     }
@@ -57,7 +57,7 @@ export function TimeInput({
 
     // Checks If MM is Lesser Than or Equal To 0
     if (e.target.value.length === 7) {
-      if (Number(e.target.value.split(" : ")[1]) <= 0) {
+      if (Number(e.target.value?.split(" : ")[1]) <= 0) {
         setInputValue(e.target.value.substring(0, 5) + "00");
       } else {
         setInputValue(`${e.target.value}`);

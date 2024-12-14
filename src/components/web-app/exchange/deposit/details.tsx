@@ -1,20 +1,17 @@
-import { db } from "@/config/firebase";
 import { RootState } from "@/store";
 import { Button, ButtonVariants, Modal } from "@/ui";
-import { doc, setDoc } from "firebase/firestore";
 import Link from "next/link";
 import React, { useState } from "react";
 import { FaRegCopy } from "react-icons/fa6";
 import QRCode from "react-qr-code";
 import { useSelector } from "react-redux";
-import { v4 as uuidV4 } from "uuid";
 
 export default function Details() {
   const user = useSelector((state: RootState) => state.user);
 
   const [showModal, setShowModal] = useState(false);
 
-  const [isMakingPayment, setIsMakingPayment] = useState(false);
+  // const [isMakingPayment, setIsMakingPayment] = useState(false);
 
   const handleToggleShowModal = () => {
     setShowModal(!showModal);
@@ -24,44 +21,44 @@ export default function Details() {
     navigator.clipboard.writeText(user.depositAddress);
   };
 
-  const handlePaymentMade = async () => {
-    handleToggleShowModal();
-    return;
-    const date = new Date();
-    const options: Intl.DateTimeFormatOptions = {
-      month: "short",
-      year: "numeric",
-    };
+  // const handlePaymentMade = async () => {
+  //   handleToggleShowModal();
+  //   return;
+  //   const date = new Date();
+  //   const options: Intl.DateTimeFormatOptions = {
+  //     month: "short",
+  //     year: "numeric",
+  //   };
 
-    const formattedDate = date.toLocaleDateString("en-US", options);
+  //   const formattedDate = date.toLocaleDateString("en-US", options);
 
-    // Get the day number with ordinal suffix
-    const day = date.getDate();
-    const ordinalSuffix = (n: number) => {
-      const s = ["th", "st", "nd", "rd"];
-      const v = n % 100;
-      return n + (s[(v - 20) % 10] || s[v] || s[0]);
-    };
+  //   // Get the day number with ordinal suffix
+  //   const day = date.getDate();
+  //   const ordinalSuffix = (n: number) => {
+  //     const s = ["th", "st", "nd", "rd"];
+  //     const v = n % 100;
+  //     return n + (s[(v - 20) % 10] || s[v] || s[0]);
+  //   };
 
-    const finalFormattedDate = ordinalSuffix(day) + " " + formattedDate;
+  //   const finalFormattedDate = ordinalSuffix(day) + " " + formattedDate;
 
-    await setDoc(doc(db, "users", user.email), {
-      ...user,
-      transactions: [
-        ...user.transactions,
-        {
-          id: uuidV4(),
-          type: "deposit",
-          date: finalFormattedDate,
-          status: false,
-        },
-      ],
-    }).catch(() => {
-      // setErrorMessage(error.message);
-    });
+  //   await setDoc(doc(db, "users", user.email), {
+  //     ...user,
+  //     transactions: [
+  //       ...user.transactions,
+  //       {
+  //         id: uuidV4(),
+  //         type: "deposit",
+  //         date: finalFormattedDate,
+  //         status: false,
+  //       },
+  //     ],
+  //   }).catch(() => {
+  //     // setErrorMessage(error.message);
+  //   });
 
-    setIsMakingPayment(false);
-  };
+  //   setIsMakingPayment(false);
+  // };
 
   return (
     <div className="w-full max-w-2xl mx-auto grid sm:gap-5">
@@ -93,13 +90,13 @@ export default function Details() {
           <button
             type="button"
             onClick={handleCopy}
-            className="bg-white text-primary border border-primary bg-opacity-20 text-sm font-semibold grid grid-flow-col justify-center gap-3 p-3 rounded-md"
+            className="bg-primary text-white border border-primary text-sm font-semibold grid grid-flow-col justify-center gap-3 p-3 rounded-md"
           >
             <FaRegCopy className="text-xl" /> Copy Wallet Address
           </button>
         </div>
       </div>
-      <Button
+      {/* <Button
         onClick={handlePaymentMade}
         isLoading={isMakingPayment}
         disabled={isMakingPayment}
@@ -107,7 +104,7 @@ export default function Details() {
         className="mx-auto w-full max-w-sm mt-5 py-3"
       >
         I have made payment
-      </Button>
+      </Button> */}
 
       <Modal isModal={showModal}>
         <div className="grid gap-3">

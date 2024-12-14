@@ -64,7 +64,7 @@ export default function AccountDetails() {
           type: "withdrawal",
           amount: Number(amount),
           date: finalFormattedDate,
-          source: "",
+          source: paymentMethod,
           status: TransactionStatus.Processing,
         },
       ],
@@ -122,7 +122,7 @@ export default function AccountDetails() {
             </>
           )}
 
-          {paymentMethod.split("-")[0] === "Bank Transfer" && (
+          {paymentMethod?.split("-")[0] === "Bank Transfer" && (
             <>
               <Input
                 type={Inputs.Text}

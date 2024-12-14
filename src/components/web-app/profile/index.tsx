@@ -40,7 +40,7 @@ export default function Profile() {
       .upload(`${user.id}/${fileID}`, file);
 
     if (data) {
-      const photoUrl = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/test-storage/${user.id}/${fileID}`;
+      const photoUrl = `https://hqeoienegxyhxzpmhnro.supabase.co/storage/v1/object/public/test-storage/${user.id}/${fileID}`;
       await setDoc(doc(db, "users", user?.email ?? ""), {
         ...user,
         photoUrl,
@@ -60,7 +60,7 @@ export default function Profile() {
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFile = e.target.files?.[0];
-    if (selectedFile?.type.split("/")[0] !== "image") return;
+    if (selectedFile?.type?.split("/")[0] !== "image") return;
     uploadFile(selectedFile);
   };
 

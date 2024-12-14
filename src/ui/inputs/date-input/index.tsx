@@ -25,19 +25,19 @@ export function DateInput({
     if (!e.target.value.match(/^\d{0,2}(\/?\d{0,2})(\/?\d{0,4})$/)) return;
 
     // Checks If DD is Greater Than 31
-    if (Number(e.target.value.split("/")[0]) > 31) {
+    if (Number(e.target.value?.split("/")[0]) > 31) {
       setInputValue("31/");
       return;
     }
 
     // Checks If MM is Greater Than 12
-    if (Number(e.target.value.split("/")[1]) > 12) {
+    if (Number(e.target.value?.split("/")[1]) > 12) {
       setInputValue(e.target.value.substring(0, 3) + "12/");
       return;
     }
 
     // Checks If YYYY is Greater Than current Date.
-    if (Number(e.target.value.split("/")[2]) > currentDate.getFullYear()) {
+    if (Number(e.target.value?.split("/")[2]) > currentDate.getFullYear()) {
       setInputValue(e.target.value.substring(0, 6) + currentDate.getFullYear());
       return;
     }
@@ -60,7 +60,7 @@ export function DateInput({
       e.target.value.length === 5 &&
       inputValue.length < e.target.value.length
     ) {
-      if (Number(e.target.value.split("/")[1]) <= 0) {
+      if (Number(e.target.value?.split("/")[1]) <= 0) {
         setInputValue(e.target.value.substring(0, 3) + "01/");
       } else {
         setInputValue(`${e.target.value}/`);
@@ -71,7 +71,7 @@ export function DateInput({
     // Checks If YYYY is Lesser Than (Current Year - 100)
     if (e.target.value.length === 10) {
       if (
-        Number(e.target.value.split("/")[2]) <=
+        Number(e.target.value?.split("/")[2]) <=
         currentDate.getFullYear() - 100
       ) {
         setInputValue(
