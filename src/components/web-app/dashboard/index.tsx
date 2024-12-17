@@ -30,7 +30,7 @@ export default function Dashboard() {
       <div className="grid grid-cols-[repeat(3,_minmax(300px,_1fr))] gap-5 h-max overflow-x-auto custom-scroll-bar pb-3">
         <PortfolioBalance value={user.balance} />
         <TotalDeposit value={user.deposit} />
-        <Withdrawals value={user.withdrawals} />
+        <Withdrawals value={user.withdrawal} />
       </div>
 
       {/* Chart and Recent ACtivities */}

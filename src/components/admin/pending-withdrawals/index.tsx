@@ -4,9 +4,11 @@ import React, { useLayoutEffect, useState } from "react";
 import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import { db } from "@/config/firebase";
 import Card from "./card";
+import { Logo } from "@/ui";
+import { TransactionType } from "@/@types";
 
-export default function Transactions() {
-  const [transactionList, setTransactionList] = useState<any[]>([]);
+export default function PendingWithdrawals() {
+  const [list, setList] = useState<any[]>([]);
 
   const [isLoading, setIsLoading] = useState(true);
 
@@ -18,11 +20,18 @@ export default function Transactions() {
       doc.data().transactions.length > 0 &&
         doc
           .data()
-          .transactions.forEach((e: Record<string, any>) =>
+          .transactions.filter(
+            (e: Record<string, any>) => e.type == TransactionType.Withdrawal
+          )
+          .forEach((e: Record<string, any>) =>
             arr.push({ user: doc.data(), ...e })
           );
     });
-    setTransactionList(arr);
+    setList(
+      arr.sort(
+        (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+      )
+    );
     setIsLoading(false);
   };
 
@@ -32,10 +41,10 @@ export default function Transactions() {
 
   if (isLoading) {
     return (
-      <div className="w-full h-full grid items-center justify-center">
-        <p className="text-gray-300 text-3xl font-semibold animate-pulse">
-          PrimeFuturesPip
-        </p>
+      <div className="w-full h-full grid place-content-center">
+        <span className="animate-pulse">
+          <Logo className="w-40 opacity-20" />
+        </span>
       </div>
     );
   }
@@ -55,15 +64,15 @@ export default function Transactions() {
           </div>
         ) : (
           <div className="grid gap-5 content-start overflow-y-scroll custom-scroll-bar">
-            {transactionList.map((tran, index) => (
+            {list.map((item, index) => (
               <Card
                 key={index}
-                amount={tran.amount}
-                user={tran.user}
-                id={tran.id}
-                type={tran.type}
-                date={tran.date}
-                completed={tran.completed}
+                amount={item.amount}
+                user={item.user}
+                id={item.id}
+                type={item.type}
+                date={item.date}
+                status={item.status}
                 refresh={() => getUsers()}
               />
             ))}
