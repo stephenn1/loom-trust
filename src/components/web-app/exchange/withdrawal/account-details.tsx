@@ -17,7 +17,7 @@ import { TransactionStatus } from "@/@types";
 export default function AccountDetails() {
   const user = useSelector((state: RootState) => state.user);
   const [showModal, setShowModal] = useState(
-    Boolean(Number(user?.balance) < 300)
+    Boolean(Number(user?.deposit) < 300)
   );
 
   const [paymentMethod, setPaymentMethod] = useState("");
@@ -48,7 +48,7 @@ export default function AccountDetails() {
     const finalFormattedDate = ordinalSuffix(day) + " " + formattedDate;
 
     const data = new FormData(e.currentTarget);
-    const amount = data.get("amount") as string;
+    const amount = Number(data.get("amount"));
 
     if (!paymentMethod) {
       setIsLoading(false);
@@ -57,11 +57,13 @@ export default function AccountDetails() {
 
     await setDoc(doc(db, "users", user.email), {
       ...user,
+      balance: Number(user.balance || 0) - amount,
+      withdrawal: Number(user.withdrawal || 0) + amount,
       transactions: [
         {
           id: uuidV4(),
           type: "withdrawal",
-          amount: Number(amount),
+          amount: amount,
           date: finalFormattedDate,
           source: paymentMethod,
           status: TransactionStatus.Processing,

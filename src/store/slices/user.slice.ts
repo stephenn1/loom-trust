@@ -25,7 +25,7 @@ export interface User {
   suspended: boolean;
   timestamp: number;
   transactions: [] | Transaction[];
-  withdrawals: number;
+  withdrawal: number;
 }
 
 export interface Transaction {
@@ -66,7 +66,7 @@ export const userInitialState: User = {
   suspended: false,
   timestamp: 0,
   transactions: [],
-  withdrawals: 0,
+  withdrawal: 0,
 };
 
 const userSlice = createSlice({
