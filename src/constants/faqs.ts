@@ -1,6 +1,6 @@
 export const FAQS = [
   {
-    ques: "What is Prime LoomTrust and how does it work?",
+    ques: "What is LoomTrust and how does it work?",
     ans: "LoomTrust is a comprehensive cryptocurrency platform that allows users to send, receive, trade and perform transactions in digital assets securely and conveniently. Our platform provides users with access to a wide range of cryptocurrencies, including Bitcoin, Ethereum, and more.",
   },
   {

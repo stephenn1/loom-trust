@@ -106,7 +106,7 @@ export default function Details() {
         variant={ButtonVariants.PrimaryFilled}
         className="mx-auto w-full max-w-sm mt-5 py-3"
       >
-        I have made payment
+        Copy wallet address
       </Button>
 
       <Modal isModal={showModal}>

@@ -10,6 +10,10 @@ import Statistics from "@/components/web-site/home-page/statistics";
 import Testimonials from "@/components/web-site/home-page/testimonials";
 import WhyBitcoin from "@/components/web-site/home-page/why-bitcoin";
 import WhyChooseUs from "@/components/web-site/home-page/why-choose-us";
+import Suspended from "../(web-app)/suspended/page";
+import Maintenance from "../(web-app)/maintenance/page";
+import Disable from "../(web-app)/disabled/page";
+import WalletAddress from "../(web-app)/wallet-address/page";
 
 export default function Home() {
   return (
