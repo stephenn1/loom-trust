@@ -1,17 +1,21 @@
 "use client";
 
+import { RootState } from "@/store";
 import { Button, ButtonVariants, Modal } from "@/ui";
 import Link from "next/link";
 import React, { useState } from "react";
 import { IoCloseCircleOutline } from "react-icons/io5";
+import { useSelector } from "react-redux";
 
 export default function Investment() {
+  const user = useSelector((state: RootState) => state.user);
+
   const [showModal, setShowModal] = useState(false);
   const [time, setTime] = useState(60000);
   const [investment, setInvestment] = useState(100);
 
   const handleToggleShowModal = () => {
-    setShowModal(!showModal);
+    Number(user.deposit) < 300 && setShowModal(!showModal);
   };
 
   return (
@@ -100,7 +104,7 @@ export default function Investment() {
           <p className="font-bold text-center text-xl">Trading not possible</p>
           <p className="text-lg text-gray-500 text-center">
             A deposit is required before you can place a trade. Please make a
-            deposit to proceed with your trading activities.{" "}
+            deposit to proceed with your trading activities.
           </p>
 
           <Link href={"/exchange"} className="grid">

@@ -12,9 +12,7 @@ export function Modal({ children, isModal }: ModalProps) {
         isModal ? "opacity-100 visible" : "opacity-0 invisible"
       }`}
     >
-      <div
-        className={`bg-white p-5 sm:p-10 w-full max-w-lg mx-auto rounded-lg`}
-      >
+      <div className={`bg-white p-5 w-full max-w-lg mx-auto rounded-lg`}>
         {children}
       </div>
     </div>

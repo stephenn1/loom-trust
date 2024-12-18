@@ -9,7 +9,7 @@ export interface OtpInputProps {
 
 const OtpInput = ({ length, name, defaultValue, onChange }: OtpInputProps) => {
   const [otp, setOtp] = useState(
-    defaultValue ? defaultValue.split("") : Array(length).fill("")
+    defaultValue ? defaultValue?.split("") : Array(length).fill("")
   );
   const handleChange = (element: HTMLInputElement, index: number) => {
     const newOtp = [...otp];
@@ -33,7 +33,7 @@ const OtpInput = ({ length, name, defaultValue, onChange }: OtpInputProps) => {
   };
   const handlePaste = (event: React.ClipboardEvent<HTMLInputElement>) => {
     const pasteData = event.clipboardData.getData("text");
-    const pasteArr = pasteData.trim().split("");
+    const pasteArr = pasteData.trim()?.split("");
     const newOtp: string[] = [];
     otp.forEach((_, index) => {
       const pasteArrElem = pasteArr[index];

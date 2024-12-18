@@ -11,13 +11,13 @@ import {
   CRYPTO_CURRENCIES,
   WITHDRAWAL_METHODS,
 } from "@/constants/withdrawal-methods";
-import { IoIosInformationCircleOutline } from "react-icons/io";
 import Link from "next/link";
+import { TransactionStatus } from "@/@types";
 
 export default function AccountDetails() {
   const user = useSelector((state: RootState) => state.user);
   const [showModal, setShowModal] = useState(
-    Boolean(Number(user?.balance) < 300)
+    Boolean(Number(user?.deposit) < 300)
   );
 
   const [paymentMethod, setPaymentMethod] = useState("");
@@ -48,7 +48,7 @@ export default function AccountDetails() {
     const finalFormattedDate = ordinalSuffix(day) + " " + formattedDate;
 
     const data = new FormData(e.currentTarget);
-    const amount = data.get("amount") as string;
+    const amount = Number(data.get("amount"));
 
     if (!paymentMethod) {
       setIsLoading(false);
@@ -57,15 +57,18 @@ export default function AccountDetails() {
 
     await setDoc(doc(db, "users", user.email), {
       ...user,
+      balance: Number(user.balance || 0) - amount,
+      withdrawal: Number(user.withdrawal || 0) + amount,
       transactions: [
-        ...user.transactions,
         {
           id: uuidV4(),
           type: "withdrawal",
-          amount: Number(amount),
+          amount: amount,
           date: finalFormattedDate,
-          completed: false,
+          source: paymentMethod,
+          status: TransactionStatus.Processing,
         },
+        ...user.transactions,
       ],
     });
 
@@ -74,8 +77,11 @@ export default function AccountDetails() {
 
   return (
     <>
-      <form onSubmit={handleFormSubmit} className="max-w-2xl mx-auto w-full">
-        <div className="grid gap-5 p-5 rounded-lg bg-primary bg-opacity-10">
+      <form
+        onSubmit={handleFormSubmit}
+        className="max-w-2xl mx-auto w-full min-h-full grid grid-rows-[1fr_auto]"
+      >
+        <div className="grid content-start gap-5 p-5 rounded-lg bg-primary bg-opacity-10">
           <Input
             type={Inputs.Number}
             name="amount"
@@ -118,7 +124,7 @@ export default function AccountDetails() {
             </>
           )}
 
-          {paymentMethod.split("-")[0] === "Bank Transfer" && (
+          {paymentMethod?.split("-")[0] === "Bank Transfer" && (
             <>
               <Input
                 type={Inputs.Text}
@@ -168,13 +174,6 @@ export default function AccountDetails() {
           >
             Proceed
           </Button>
-          <div className="text-gray-500 grid grid-cols-[auto_1fr] gap-2 text-sm mt-5">
-            <IoIosInformationCircleOutline className="text-xl" />
-            <p>
-              For assistance please contact our customer care to request your
-              Transaction Code. Happy Investing!
-            </p>
-          </div>
         </div>
       </form>
 

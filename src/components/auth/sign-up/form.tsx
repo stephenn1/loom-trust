@@ -9,7 +9,6 @@ import { userInitialState } from "@/store/slices/user.slice";
 import Link from "next/link";
 import { Button, ButtonVariants, Input, Inputs } from "@/ui";
 import { COUNTRIES } from "@/constants/countries";
-import { CURRENCIES } from "@/constants/currencies";
 import { IoIosInformationCircleOutline } from "react-icons/io";
 
 export default function Form() {
@@ -20,48 +19,6 @@ export default function Form() {
   const clearErrorMessage = () => {
     setErrorMessage("");
   };
-
-  // const handleGoogleSigin = async () => {
-  //   clearErrorMessage();
-  //   const timestamp = Date.now();
-
-  //   const provider = new GoogleAuthProvider();
-  //   let id = "";
-  //   let email = "";
-  //   let firstName = "";
-  //   let lastName = "";
-  //   let phoneNumber = "";
-
-  //   await signInWithPopup(auth, provider)
-  //     .then((result) => {
-  //       const user = result.user;
-  //       id = user.uid;
-  //       email = user.email ? user.email : "";
-  //       firstName = user.displayName?.split(" ")[0]
-  //         ? user.displayName?.split(" ")[0]
-  //         : "";
-  //       lastName = user.displayName?.split(" ")[1]
-  //         ? user.displayName?.split(" ")[1]
-  //         : "";
-  //       phoneNumber = user.phoneNumber ? user.phoneNumber : "";
-  //       console.log(email, firstName, lastName);
-  //     })
-  //     .catch((error) => {
-  //       setErrorMessage(error.message);
-  //     });
-
-  //   await setDoc(doc(db, "users", email), {
-  //     ...userInitialState,
-  //     id,
-  //     firstName,
-  //     lastName,
-  //     email,
-  //     phoneNumber,
-  //     timestamp,
-  //   }).then(() => {
-  //     router.push("/dashboard");
-  //   });
-  // };
 
   const handleFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -76,7 +33,6 @@ export default function Form() {
     const city = data.get("city") as string;
     const state = data.get("state") as string;
     const country = data.get("country") as string;
-    const currency = data.get("currency") as string;
     const password = data.get("password") as string;
     const confirmPassword = data.get("confirm-password") as string;
 
@@ -103,7 +59,6 @@ export default function Form() {
           country,
           city,
           state,
-          currency,
           timestamp,
         });
 
@@ -178,16 +133,6 @@ export default function Form() {
           name="country"
           label="Country"
           placeholder="Country of Residence"
-          isSearch
-          required
-        />
-
-        <Input
-          type={Inputs.Select}
-          options={CURRENCIES}
-          name="currency"
-          label="Currency"
-          placeholder="Your preffered Currency"
           isSearch
           required
         />

@@ -15,7 +15,7 @@ import UserDetails from "./user-details";
 export default function Header() {
   const dispatch = useDispatch();
   const user = useSelector((state: RootState) => state.user);
-  const path = usePathname().split("/").join("");
+  const path = usePathname()?.split("/").join("");
 
   const handleContinue = async () => {
     dispatch(

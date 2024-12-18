@@ -67,7 +67,7 @@ export default function RecentTransactionsItem({
               : "bg-yellow-500 border-yellow-500 bg-opacity-10 text-yellow-500"
           }`}
         >
-          {status.split("-").join(" ")}
+          {status?.split("-").join(" ")}
         </span>
       </div>
     </div>

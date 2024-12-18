@@ -1,16 +1,19 @@
 "use client";
 
+import { RootState } from "@/store";
 import { Button, ButtonVariants, Modal } from "@/ui";
 import Link from "next/link";
 import React, { useState } from "react";
 import { FaBtc } from "react-icons/fa6";
 import { IoCloseCircleOutline } from "react-icons/io5";
+import { useSelector } from "react-redux";
 
 export default function Investment() {
+  const user = useSelector((state: RootState) => state.user);
   const [showModal, setShowModal] = useState(false);
 
   const handleToggleShowModal = () => {
-    setShowModal(!showModal);
+    Number(user.deposit) < 300 && setShowModal(!showModal);
   };
 
   return (
