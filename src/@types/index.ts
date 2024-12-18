@@ -11,3 +11,10 @@ export enum TransactionType {
   Withdrawal = "withdrawal",
   Received = "received",
 }
+
+export enum AccountStatus {
+  Maintenance = "maintenance",
+  Suspended = "suspended",
+  Disabled = "disabled",
+  Active = "active",
+}

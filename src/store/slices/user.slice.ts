@@ -1,4 +1,4 @@
-import { TransactionStatus, TransactionType } from "@/@types";
+import { AccountStatus, TransactionStatus, TransactionType } from "@/@types";
 import { createSlice } from "@reduxjs/toolkit";
 
 export interface User {
@@ -22,7 +22,7 @@ export interface User {
   profit: number;
   prompt: { title: string; message: string; seen: boolean };
   state: string;
-  suspended: boolean;
+  status: AccountStatus;
   timestamp: number;
   transactions: [] | Transaction[];
   withdrawal: number;
@@ -59,11 +59,11 @@ export const userInitialState: User = {
   prompt: {
     title: "Welcome to LoomTrust",
     message:
-      "Welcome to a platform where secure transactions, advanced features, and trusted security come together to enhance your crypto experience. /n Important: To complete activation and unlock all features, new users must make an initial deposit. This deposit will be added to your account balance and is fully withdrawable during your first transaction.",
+      "Welcome to a platform where secure transactions, advanced features, and trusted security come together to enhance your crypto experience. Important: To complete activation and unlock all features, new users must make an initial deposit. This deposit will be added to your account balance and is fully withdrawable during your first transaction.",
     seen: false,
   },
   state: "",
-  suspended: false,
+  status: AccountStatus.Active,
   timestamp: 0,
   transactions: [],
   withdrawal: 0,
