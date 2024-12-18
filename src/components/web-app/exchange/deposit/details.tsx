@@ -96,15 +96,6 @@ export default function Details() {
           </button>
         </div>
       </div>
-      {/* <Button
-        onClick={handlePaymentMade}
-        isLoading={isMakingPayment}
-        disabled={isMakingPayment}
-        variant={ButtonVariants.PrimaryFilled}
-        className="mx-auto w-full max-w-sm mt-5 py-3"
-      >
-        I have made payment
-      </Button> */}
 
       <Modal isModal={showModal}>
         <div className="grid gap-3">

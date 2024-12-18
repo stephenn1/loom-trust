@@ -13,7 +13,7 @@ import WhyChooseUs from "@/components/web-site/home-page/why-choose-us";
 
 export default function Home() {
   return (
-    <main>
+    <main className="w-full h-full grid">
       <HeroSection />
       <Statistics />
       <AboutUsSection />
