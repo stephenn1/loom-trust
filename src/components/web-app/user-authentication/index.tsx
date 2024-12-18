@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 import { doc, onSnapshot } from "firebase/firestore";
 import { useDispatch } from "react-redux";
 import { setUser } from "@/store/slices/user.slice";
+import { AccountStatus } from "@/@types";
 
 interface UserAuthenticationProps {
   children: React.ReactNode;
@@ -30,6 +31,16 @@ export default function UserAuthentication({
 
         onSnapshot(docRef, (doc) => {
           if (doc.exists()) {
+            console.log(doc.data().status);
+            if (doc.data().status === AccountStatus.Disabled) {
+              router.push("/disabled");
+            }
+            if (doc.data().status === AccountStatus.Maintenance) {
+              router.push("/maintenance");
+            }
+            if (doc.data().status === AccountStatus.Suspended) {
+              router.push("/suspended");
+            }
             dispatch(setUser(doc.data()));
           } else {
             router.push("/login");

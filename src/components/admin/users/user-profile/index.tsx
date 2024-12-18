@@ -22,6 +22,7 @@ import { Logo } from "@/ui";
 import AddBalance from "./add-balance";
 import AddDeposit from "./add-deposit";
 import UpdatePrompt from "./update-prompt";
+import UpdateStatus from "./update-status";
 
 export default function Profile() {
   const router = useRouter();
@@ -172,6 +173,9 @@ export default function Profile() {
         </div>
       </div>
       <div className="grid content-start px-5 sm:px-10">
+        <UpdateStatus user={user} refresh={getUserData} />
+
+        {/* Update Prompt */}
         <UpdatePrompt user={user} refresh={getUserData} />
 
         {/* Add Deposit */}
