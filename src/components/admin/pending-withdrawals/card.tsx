@@ -45,11 +45,13 @@ export default function Card({
     await setDoc(doc(db, "users", user.email), {
       ...user,
       balance:
-        status === TransactionStatus.Failed &&
-        Number(user.balance || 0) + amount,
+        status === TransactionStatus.Failed
+          ? Number(user.balance || 0) + amount
+          : Number(user.balance || 0),
       withdrawal:
-        status === TransactionStatus.Failed &&
-        Number(user.withdrawal || 0) - amount,
+        status === TransactionStatus.Failed
+          ? Number(user.withdrawal || 0) - amount
+          : Number(user.withdrawal || 0),
       transactions: [
         ...user.transactions.map((e: any) =>
           e.id === id ? { ...e, status } : e
@@ -135,19 +137,20 @@ export default function Card({
           </span>
         </div>
 
-        {status !== TransactionStatus.Successful && (
-          <div className="grid gap-2">
-            <p className="text-xs font-semibold capitalize text-gray-400 whitespace-nowrap">
-              Action
-            </p>
-            <Button
-              onClick={handleToggleIsUpdateStatus}
-              className="text-xs font-semibold text-white bg-primary py-2 px-3 rounded-md w-max grid items-center"
-            >
-              Update Status
-            </Button>
-          </div>
-        )}
+        {status !== TransactionStatus.Successful &&
+          status !== TransactionStatus.Failed && (
+            <div className="grid gap-2">
+              <p className="text-xs font-semibold capitalize text-gray-400 whitespace-nowrap">
+                Action
+              </p>
+              <Button
+                onClick={handleToggleIsUpdateStatus}
+                className="text-xs font-semibold text-white bg-primary py-2 px-3 rounded-md w-max grid items-center"
+              >
+                Update Status
+              </Button>
+            </div>
+          )}
       </div>
 
       <Modal isModal={isUpdateStatus}>
