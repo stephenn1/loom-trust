@@ -13,6 +13,7 @@ import {
 } from "@/constants/withdrawal-methods";
 import Link from "next/link";
 import { TransactionStatus } from "@/@types";
+import ProcessingWithdrawal from "./processing-withdrawal";
 
 export default function AccountDetails() {
   const user = useSelector((state: RootState) => state.user);
@@ -22,9 +23,13 @@ export default function AccountDetails() {
 
   const [paymentMethod, setPaymentMethod] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [processingWithdrawal, setProcessingWithdrawal] = useState(false);
 
   const handleToggleShowModal = () => {
     setShowModal(!showModal);
+  };
+  const handleToggleProcessingWithdrawal = () => {
+    setProcessingWithdrawal(!processingWithdrawal);
   };
 
   const handleFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -73,7 +78,16 @@ export default function AccountDetails() {
     });
 
     setIsLoading(false);
+    setProcessingWithdrawal(true);
   };
+
+  if (processingWithdrawal) {
+    return (
+      <ProcessingWithdrawal
+        toggleProcessingWithdrawal={handleToggleProcessingWithdrawal}
+      />
+    );
+  }
 
   return (
     <>

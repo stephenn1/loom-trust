@@ -1,8 +1,14 @@
-import { Button } from "@/ui";
+import { Button, ButtonVariants } from "@/ui";
 import Link from "next/link";
 import { FaCheckCircle } from "react-icons/fa";
 
-export default function ProcessingWithdrawal() {
+interface ProcessingWithdrawalProps {
+  toggleProcessingWithdrawal: () => void;
+}
+
+export default function ProcessingWithdrawal({
+  toggleProcessingWithdrawal,
+}: ProcessingWithdrawalProps) {
   return (
     <div className="w-full max-w-3xl grid content-center mx-auto">
       <div className="bg-secondary px-5 py-10 grid gap-5 rounded-xl">
@@ -22,7 +28,11 @@ export default function ProcessingWithdrawal() {
       </div>
 
       <Link href={"/dashboard"} className="grid mt-10">
-        <Button className="mx-auto py-3 w-full max-w-sm">
+        <Button
+          onClick={toggleProcessingWithdrawal}
+          variant={ButtonVariants.PrimaryFilled}
+          className="mx-auto py-3 w-full max-w-sm"
+        >
           Return To Dashboard
         </Button>
       </Link>
