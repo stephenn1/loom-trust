@@ -23,6 +23,7 @@ import AddBalance from "./add-balance";
 import AddDeposit from "./add-deposit";
 import UpdatePrompt from "./update-prompt";
 import UpdateStatus from "./update-status";
+import UpdateDepositAddress from "./update-deposit-address";
 
 export default function Profile() {
   const router = useRouter();
@@ -177,6 +178,9 @@ export default function Profile() {
 
         {/* Update Prompt */}
         <UpdatePrompt user={user} refresh={getUserData} />
+
+        {/* Update Deposit Address */}
+        <UpdateDepositAddress user={user} refresh={getUserData} />
 
         {/* Add Deposit */}
         <AddDeposit user={user} refresh={getUserData} />

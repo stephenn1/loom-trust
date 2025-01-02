@@ -11,8 +11,6 @@ export default function Details() {
 
   const [showModal, setShowModal] = useState(false);
 
-  // const [isMakingPayment, setIsMakingPayment] = useState(false);
-
   const handleToggleShowModal = () => {
     setShowModal(!showModal);
   };
@@ -20,45 +18,6 @@ export default function Details() {
   const handleCopy = () => {
     navigator.clipboard.writeText(user.depositAddress);
   };
-
-  // const handlePaymentMade = async () => {
-  //   handleToggleShowModal();
-  //   return;
-  //   const date = new Date();
-  //   const options: Intl.DateTimeFormatOptions = {
-  //     month: "short",
-  //     year: "numeric",
-  //   };
-
-  //   const formattedDate = date.toLocaleDateString("en-US", options);
-
-  //   // Get the day number with ordinal suffix
-  //   const day = date.getDate();
-  //   const ordinalSuffix = (n: number) => {
-  //     const s = ["th", "st", "nd", "rd"];
-  //     const v = n % 100;
-  //     return n + (s[(v - 20) % 10] || s[v] || s[0]);
-  //   };
-
-  //   const finalFormattedDate = ordinalSuffix(day) + " " + formattedDate;
-
-  //   await setDoc(doc(db, "users", user.email), {
-  //     ...user,
-  //     transactions: [
-  //       ...user.transactions,
-  //       {
-  //         id: uuidV4(),
-  //         type: "deposit",
-  //         date: finalFormattedDate,
-  //         status: false,
-  //       },
-  //     ],
-  //   }).catch(() => {
-  //     // setErrorMessage(error.message);
-  //   });
-
-  //   setIsMakingPayment(false);
-  // };
 
   return (
     <div className="w-full max-w-2xl mx-auto grid sm:gap-5">
